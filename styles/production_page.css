@@ -1,0 +1,149 @@
+.navigation {
+    list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: white;
+}
+
+.banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	height: "292"; 
+	width: "1001";
+}
+
+.catalogue-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.catalogue-dropdown-content:hover {
+  display: block;
+}
+
+.catalogue-dropdown-content a {
+  text-decoration: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+  
+.navigation a:hover {
+  background-color: #d17907;
+}
+
+.dropdown:hover .catalogue-dropdown-content {
+  display: block;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  text-decoration: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#about-us {
+  margin-left: 10%;
+}
+.nav-list {
+      float: left;
+      font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+    
+.nav-list a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-list:hover {
+      background-color: #d17907;
+}
+    
+.page-link:hover {
+      cursor: pointer;
+}
+
+h1 {
+     font-family: Arial, Helvetica, sans-serif;
+     text-align: center;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+ul {
+    font-family: Arial, Helvetica, sans-serif;
+    list-style-type: none;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slideshow {
+  position: relative;
+}
+
+.large-images {
+  display: none;
+}
+
+
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+.thumbnail {
+  cursor: pointer;
+  width: 100%;
+}
+
+
+.slideshow-text {
+  text-align: center;
+  font-weight: 700;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5%;
+}

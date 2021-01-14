@@ -1,0 +1,235 @@
+ /* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+} 
+.navigation {
+    list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: white;
+}
+
+.banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	height: "292"; 
+	width: "1001";
+}
+
+.catalogue-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.catalogue-dropdown-content:hover {
+  display: block;
+}
+
+.catalogue-dropdown-content a {
+  text-decoration: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.navigation a:hover {
+  background-color: #d17907;
+}
+
+.dropdown:hover .catalogue-dropdown-content {
+  display: block;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  text-decoration: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#about-us {
+  margin-left: 10%;
+}
+.nav-list {
+      float: left;
+      font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+    
+.nav-list a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+li a:hover {
+      background-color: #d17907;
+}
+    
+.page-link:hover {
+      cursor: pointer;
+}
+
+body { 
+  font-family:Arial, Helvetica, sans-serif;
+  }
+img {
+  position: relative; 
+  margin-bottom: 0px; 
+  padding: 0px;
+  }
+
+.member-header {
+  text-align: center;  
+  width: 1001px; 
+  margin:0px;
+  font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+
+.member-h2 {
+  text-align: center;
+  font-size: 20px;
+  width: 1001px;
+  margin: 0px;
+  position: relative;
+  font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+
+
+.page-link:hover {
+  cursor: pointer;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table, tr, td, th {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color:#CC6600;
+  position: relative;
+  font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+
+html, body {
+    height: 100%;
+  }
+
+html {
+    display: table;
+    margin: auto;
+  }
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    height:auto;
+  }
+footer {
+  text-align: center; 
+  background-color:#FFCC66; 
+  width: 1001px; 
+  position: relative;
+  z-index: 1; 
+  padding-top: 20px; 
+  padding-bottom: 20px; 
+  left:0px;
+  bottom: 1px;
+  margin-top: 20px;
+  font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
