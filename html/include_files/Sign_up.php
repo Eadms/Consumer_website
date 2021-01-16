@@ -15,25 +15,20 @@ $lastName = $_POST['lastName'];
 $pwd = $_POST['pwd'];
 $pwdrepeat = $_POST['pwdRepeat'];
 	
-	if (empty($firstName) || empty($email) || empty($Username) || empty($lastName) || empty($pwd) || empty($pwdrepeat)) {
-		header('location: ../Customer_registration.php?signup=empty');
-		exit();
-	} elseif (!preg_match("/^[a-zA-Z]*$/", $firstName) || !preg_match("/^[a-zA-Z]*$/", $lastName)) {
+	if (!preg_match("/^[a-zA-Z]*$/", $firstName) || !preg_match("/^[a-zA-Z]*$/", $lastName)) {
 			header('location: ../Customer_registration.php?signup=char');
 			exit();
 		} elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			header("location: ../Customer_registration.php?signup=email&firstName=$firstName&lastName=$lastName&Username=$Username");
-			//exit();
+			exit();
 		} elseif($pwd !== $pwdrepeat) {
 	header('location: ../Customer_registration.php?Passworddontmatch');
-	echo 'Your password does not match';
 		exit();
 	} else {
 	$register = "INSERT into members(UserID, HashedPassword, first_name, last_name, email)
 VALUES ('". $_POST['pwd'] ."','". $_POST['Username'] ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
-
 mysqli_query($conn, $register);
-		 
+		header('location: ../Customer_login.php?');
 	} 
 	
 }
