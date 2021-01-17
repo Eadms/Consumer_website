@@ -28,7 +28,7 @@ $pwdrepeat = $_POST['pwdRepeat'];
 	$register = "INSERT into members(UserID, HashedPassword, first_name, last_name, email)
 VALUES ('". $_POST['pwd'] ."','". $_POST['Username'] ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
 mysqli_query($conn, $register);
-		header('location: ../Customer_login.php?');
+		header('location: ../Customer_login.php?'); //redirects the user to the login page if registration is successful
 	} 
 	
 }

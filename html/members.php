@@ -15,17 +15,7 @@
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
 		</header>
-		        <section class="signup-form">
-			 <p><h1>Customer Registration</h1></p>
-	<div class="signup-form-form">
-        <form action="include_files/login.php" method="post" class="sign-up-form">
-			<label for "Username">Username/Email</label><input type="text" name="uid" placeholder="Username"><br>
-			<label for "pwd">Password</label><input type="password" name="pwd" placeholder="Password"><br>
-			<button type="submit" name="submit">Login</button>
-			<button type="reset" name="cancel">Cancel</button>
-	</form>
-		</div>
-	</section>
+		     
 			<table style="left: -3px; top: 0px" class="member-table" class="content"><!--table which displays the sale items-->
 				<tr class="member-tr">
 					<th colspan="3" class="auto-style1">Discounted Items</th>
