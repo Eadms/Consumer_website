@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 $serverName = "localhost";
 $dbusername = "root";
 $dbpassword = "";
@@ -14,19 +14,26 @@ $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $pwd = $_POST['pwd'];
 $pwdrepeat = $_POST['pwdRepeat'];
+
+//session variables which are used to keep form data in the form when the page refreshes with error data	
+$_SESSION['firstName'] = $firstName;
+$_SESSION['lastName'] = $lastName;
+$_SESSION['email'] = $email;
+$_SESSION['Username'] = $Username;
 	
 	if (!preg_match("/^[a-zA-Z]*$/", $firstName) || !preg_match("/^[a-zA-Z]*$/", $lastName)) {
-			header('location: ../Customer_registration.php?signup=char');
+			header("location: ../Customer_registration.php?signup=char");
 			exit();
 		} elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			header("location: ../Customer_registration.php?signup=email&firstName=$firstName&lastName=$lastName&Username=$Username");
+			//header("location: ../Customer_registration.php?signup=email");
+		header("location: ../Customer_registration.php?signup=email");
 			exit();
 		} elseif($pwd !== $pwdrepeat) {
-	header('location: ../Customer_registration.php?Passworddontmatch');
+	header("location: ../Customer_registration.php?signup=Passworddontmatch");
 		exit();
 	} else {
 	$register = "INSERT into members(UserID, HashedPassword, first_name, last_name, email)
-VALUES ('". $_POST['pwd'] ."','". $_POST['Username'] ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
+VALUES ('". $_POST['Username'] ."','". $_POST['pwd'] ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
 mysqli_query($conn, $register);
 		header('location: ../Customer_login.php?'); //redirects the user to the login page if registration is successful
 	} 
