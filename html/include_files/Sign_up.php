@@ -25,10 +25,13 @@ $_SESSION['Username'] = $Username;
 			header("location: ../Customer_registration.php?signup=char");
 			exit();
 		} elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			//header("location: ../Customer_registration.php?signup=email");
 		header("location: ../Customer_registration.php?signup=email");
 			exit();
-		} elseif($pwd !== $pwdrepeat) {
+		} elseif(!preg_match("/^[a-zA-Z]*$/", $Username)) {
+			header("location: ../Customer_registration.php?signup=char");
+			exit();
+		}
+	elseif($pwd !== $pwdrepeat) {
 	header("location: ../Customer_registration.php?signup=Passworddontmatch");
 		exit();
 	} else {

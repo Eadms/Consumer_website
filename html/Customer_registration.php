@@ -79,7 +79,7 @@
 			<br>
 			<label for "Username">Username</label><input type="text" name= "Username" placeholder="Username" value="<?php echo $_SESSION['Username']?>" required>
 			<br>
-			<label for "pwd">Password</label><input type="password" name= "pwd" placeholder="Password" required>
+			<label for "pwd">Password</label><input type="password" name= "pwd" placeholder="Password" minlength="6" required>
 			<br>
 			<label for "pwdrepeat">Repeat Password</label><input type= "password" name="pwdRepeat" placeholder="Repeat Password" required>
 			<br>
