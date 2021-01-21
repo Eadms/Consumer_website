@@ -41,7 +41,7 @@ mysqli_query($conn, $register);
 	} 
 	
 }
-
+$checkmember
 
 /*
 if (empty(($_POST['email']) || ($_POST['Username']) || ($_POST['firstName']) || ($_POST['lastName']) || $_POST['pwd'] || $_POST['pwdRepeat'])) {

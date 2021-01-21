@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en-au">
 <head>
@@ -99,7 +98,10 @@
 			} elseif($signupCheck == "email") {
 			echo '<p class="error">Invalid email</p>';
 			exit(); 
-		} elseif($signupCheck == "Passworddontmatch") {
+		} elseif($signupCheck == "charusername") {
+			echo '<p class="error">Username cannot contain that symbol</p>';
+			exit(); 
+			} elseif($signupCheck == "Passworddontmatch") {
 			echo '<p class="error">Password does not match</p>';
 			exit(); 
 			} elseif($signupCheck == "success") {
