@@ -12,8 +12,8 @@ $email = $_POST['email'];
 $Username = $_POST['Username'];
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
-$pwd = $_POST['pwd'];
-$pwdrepeat = $_POST['pwdRepeat'];
+$pwd = password_hash($_POST['pwd'],PASSWORD_DEFAULT);
+$pwdrepeat = password_hash($_POST['pwdRepeat'],PASSWORD_DEFAULT);
 
 //session variables which are used to keep form data in the form when the page refreshes with error data	
 $_SESSION['firstName'] = $firstName;
@@ -41,7 +41,7 @@ mysqli_query($conn, $register);
 	} 
 	
 }
-$checkmember
+$checkmember = mysqli_query("SELECT * FROM customer WHERE CustomerEmail = $email or WHERE CustomerGivenName = $firstName and CustomerLastName = $lastName")
 
 /*
 if (empty(($_POST['email']) || ($_POST['Username']) || ($_POST['firstName']) || ($_POST['lastName']) || $_POST['pwd'] || $_POST['pwdRepeat'])) {
