@@ -9,22 +9,22 @@ $dbpassword = "";
 $dbname = "bazaarceramics_db";
 $conn = mysqli_connect($serverName, $dbusername, $dbpassword, $dbname);
 
-
-
 if (isset($_POST['Username'], $_POST['password'])) {
 $Username = $_POST['Username'];
 $pwd = $_POST['password'];
 
-$sql = mysqli_query($conn, "SELECT count(*) as total from members WHERE userID = '".$Username."' AND HashedPassword = '".$pwd."'") or die(mysqli_error($conn));
 	
+	
+	
+$sql = mysqli_query($conn, "SELECT count(*) as total from members WHERE userID = '".$Username."' AND HashedPassword = '".$pwd."'");
 $rw = mysqli_fetch_array($sql);
 	
-	if($rw['total'] > 0) {
-		header("location: ../members.php");
-		echo "<script>alert('Username and apssword are correct')</script>";
-	} else {
-		header("location: login.php");
-		echo "<script>alert('Wrong password or username')</script>";
+	if($rw['total'] < 0) {
+		header("location:../Member_login.php");
+		exit();
+	} elseif($rw['total'] > 0) {
+		header("location: ../members.php?user=$Username");
+		echo "Welcome $Username";
 	}
 }
 /*

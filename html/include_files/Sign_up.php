@@ -37,7 +37,7 @@ $_SESSION['Username'] = $Username;
 	$register = "INSERT into members(UserID, HashedPassword, first_name, last_name, email)
 VALUES ('". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
 mysqli_query($conn, $register);
-		header('location: ../Customer_login.php?'); //redirects the user to the login page if registration is successful
+		header('location: ../Member_login.php?'); //redirects the user to the login page if registration is successful
 	} 
 	
 }
