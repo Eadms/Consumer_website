@@ -19,10 +19,12 @@ $sql = mysqli_query($conn, "SELECT count(*) as total from members WHERE userID =
 	
 $rw = mysqli_fetch_array($sql);
 	
-	
 	if($rw['total'] > 0) {
 		header("location: ../members.php");
 		echo "<script>alert('Username and apssword are correct')</script>";
+	} else {
+		header("location: login.php");
+		echo "<script>alert('Wrong password or username')</script>";
 	}
 }
 /*

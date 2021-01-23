@@ -7,8 +7,10 @@
 </head>
 <body>
     <header>
-		<?php include 'include_files/Navigation.inc'; ?>
-        <?php include 'include_files/Banner.inc';?>
+		<?php include 'include_files/Navigation.inc';
+         include 'include_files/Banner.inc';
+	include 'include_files/login.php';
+		?>
     </header>
     <h1>Member Login</h1>
 	<p>Use the form below to login to the Bazaar Ceramics Members page</p>

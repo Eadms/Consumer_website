@@ -21,8 +21,9 @@ echo '<nav>
 				</div>
 			</div></div>
 				<div class="nav-list"><a href="/Bazaar_Ceramics_ss/html/Customer_registration.php">Customer Registration</a></div>
+				<div class="nav-list"><a href="/Bazaar_Ceramics_ss/html/member_registration.php">Member Registration</a></div>
 				<div class="dropdown">
-					<div class="nav-list"><a href="/Bazaar_Ceramics_ss/html/Customer_login.php">Customer Login</a>
+					<div class="nav-list"><a href="/Bazaar_Ceramics_ss/html/Member_login.php">Member Login</a>
 					<div class="catalogue-dropdown-content">
 						<a href="/Bazaar_Ceramics_ss/html/Account_profile.php">Account Profile</a>
 						<a href="/Bazaar_Ceramics_ss/html/Order_history.php">Order History</a>
