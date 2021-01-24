@@ -2,7 +2,7 @@
 <html lang="en-au">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <link rel="stylesheet"  type='text/css' href="../styles/remaining_pages.css">
+    <link rel="stylesheet"  type='text/css' href="../styles/customer_registration.css">
 	<title>Bazaar Cermaics Member Login</title>
 </head>
 <body>
@@ -24,5 +24,17 @@
 	<button type="submit">Login</button>
 		<button type="reset">Reset</button>
 	</form>
+	<?php 
+	if(!isset($_GET['login'])) {
+			exit();
+		} else {
+			$signupCheck = $_GET['login'];
+			
+			if($signupCheck == "error") {
+			echo '<p class="error">Your username or password is incorrect. Please try again</p>';
+			exit(); 
+			}
+	}
+	?>
 </body>
 </html>

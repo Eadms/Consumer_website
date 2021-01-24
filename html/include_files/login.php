@@ -18,8 +18,7 @@ $sql = "SELECT * FROM members WHERE UserID = '".$username."'";
 		header("location:../members.php");
 		exit();
 	} else {
-		header("location:login.php");
-		echo "Incorrect login details";
+		header("location:../Member_login.php?login=error");
 	}
 	
 	

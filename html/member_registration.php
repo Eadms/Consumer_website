@@ -11,13 +11,13 @@
 		include 'include_files/Navigation.inc';
 		include 'include_files/Banner.inc';
 		include 'include_files/member_signup.php';
-		error_reporting(0);
+		//error_reporting(0);
 			?>
      </header>
 			 <p><h1>Member Registration</h1></p>
 	<p>Register your details below to be added to our member database</p>
 	<div class="form-container">
-        <form action="../php/include_files/Sign_up.php" method="post" class="sign-up-form">
+        <form action="../html/include_files/member_signup.php" method="post" class="sign-up-form">
 			<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" value="<?php echo $_SESSION['firstName']?>" required>
 			<br>
 			<label for "lastName">Last name</label><input type="text" name= "lastName" placeholder=" Last name" value="<?php echo $_SESSION['lastName']?>" required>

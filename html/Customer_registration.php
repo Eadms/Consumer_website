@@ -11,65 +11,13 @@
 		include 'include_files/Navigation.inc';
 		include 'include_files/Banner.inc';
 		include 'include_files/Sign_up.php';
-		error_reporting(0);
+		//error_reporting(0);
 			?>
      </header>
 			 <p><h1>Customer Registration</h1></p>
 	<p>Register your details below to be added to our customer database</p>
 	<div class="form-container">
-        <form action="include_files/Sign_up.php" method="post" class="sign-up-form">
-			<?php /*
-			if(isset($_GET['firstName'])) {
-				$firstName = $_GET['firstName'];
-				echo '<label for "firstName">First name</label><input type="text" name= "lastName" placeholder="Last name" value="'.$firstName.'" required>';
-			}
-			else {
-				echo '<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" required>';
-			}
-			echo '<br>';
-			if(isset($_GET['lastName'])) {
-				$lastName = $_GET['lastName'];
-				echo '<label for "lastName">Last name</label><input type="text" name= "lastName" placeholder="Last name" required value="'.$lastName.'" required>';
-			}
-			else {
-				echo '<label for "lastName">Last name</label><input type="text" name= "lastName" placeholder="Last name" required>';
-			}
-			echo '<br>';
-			if(isset($_GET['Username'])) {
-				$Username = $_GET['Username'];
-				echo '<label for "Username">Username</label><input type="text" name= "Username" placeholder="Username" value="'.$Username.'">';
-			}
-			else {
-				echo '<label for "Username">Username</label><input type="text" name= "Username" placeholder="Username" required>';
-			} 
-			echo '<br>';
-			if(isset($_GET['email'])) {
-				$email = $_GET['email'];
-				echo '<label for "email">Email</label><input type="text" name= "email" placeholder="Email" value="'.$email.'" required>';
-			}
-			else {
-				echo '<label for "email">Email</label><input type="text" name= "email" placeholder="Email" required>';
-			}
-			echo '<br>';
-			if(isset($_GET['pwd'])) {
-				$pwd = $_GET['pwd'];
-				echo '<label for "pwd">Password</label><input type="password" name= "pwd" placeholder="Password" value="'.$pwd.'" required>';
-			}
-			else {
-				echo '<label for "pwd">Password</label><input type="password" name= "pwd" placeholder="Password" required>';
-			}
-			echo '<br>';
-			if(isset($_GET['pwdRepeat'])) {
-				$pwdrepeat = $_GET['pwdRepeat'];
-				echo '<label for "pwdrepeat">Repeat Password</label><input type= "password" name="pwdRepeat" placeholder="Repeat Password" value="'.$pwdrepeat.'" required>';
-			}
-			else {
-				echo '<label for "pwdrepeat">Repeat Password</label><input type= "password" name="pwdRepeat" placeholder="Repeat Password" required>';
-			}
-		*/
-			
-			?>
-			
+        <form action="include_files/Sign_up.php" method="post" class="sign-up-form">		
 			<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" value="<?php echo $_SESSION['firstName']?>" required>
 			<br>
 			<label for "lastName">Last name</label><input type="text" name= "lastName" placeholder=" Last name" value="<?php echo $_SESSION['lastName']?>" required>

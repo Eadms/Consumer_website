@@ -6,6 +6,7 @@ $dbpassword = "";
 $dbname = "bazaarceramics_db";
 $conn = mysqli_connect($serverName, $dbusername, $dbpassword, $dbname);
 
+//$pdo = new PDO("mysql:host=localhost;dbname=bazaarceramics_db;charset=utf8","root","");
 
 if (isset($_POST['email'], $_POST['Username'], $_POST['firstName'], $_POST['lastName'], $_POST['pwd'], $_POST['pwdRepeat'])) {
 $email = $_POST['email'];
@@ -15,7 +16,7 @@ $lastName = $_POST['lastName'];
 $pwd = $_POST['pwd'];
 $pwdrepeat = $_POST['pwdRepeat'];
 
-//session variables which are used to keep form data in the form when the page refreshes with error data	
+//session variables to keep form data in form when page refreshes with error message. Password is deliberately not included	
 $_SESSION['firstName'] = $firstName;
 $_SESSION['lastName'] = $lastName;
 $_SESSION['email'] = $email;
@@ -36,28 +37,10 @@ $_SESSION['Username'] = $Username;
 	} else {
 	$register = "INSERT into members(UserID, HashedPassword, first_name, last_name, email)
 VALUES ('". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
-mysqli_query($conn, $register);
+		mysqli_query($pdo, $register);
 		header('location: ../Member_login.php?'); //redirects the user to the login page if registration is successful
 	} 
 	
 }
-
-
-/*
-if (empty(($_POST['email']) || ($_POST['Username']) || ($_POST['firstName']) || ($_POST['lastName']) || $_POST['pwd'] || $_POST['pwdRepeat'])) {
-	header('location: ../Customer_registration.php?missingdata');
-	echo 'Please complete all fields';
-}
-if (empty($_POST['email'])) {
-	header('location: ../Customer_registration.php?Noemail');
-	$emailError = 'Please enter your email';
-}
-
-
-if ($pwd !== $pwdrepeat) {
-	header('location: ../Customer_registration.php?Passworddontmatch');
-	echo 'Your password does not match';
-};
-*/
 
 ?>
