@@ -3,30 +3,47 @@ require "database.php";
 
 session_start();
 
-$serverName = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "bazaarceramics_db";
-$conn = mysqli_connect($serverName, $dbusername, $dbpassword, $dbname);
+$pdo = new PDO("mysql:host=localhost;dbname=bazaarceramics_db;charset=utf8","root","");
 
 if (isset($_POST['Username'], $_POST['password'])) {
-$Username = $_POST['Username'];
+$username = $_POST['Username'];
 $pwd = $_POST['password'];
+	
+$sql = "SELECT * FROM members WHERE UserID = '".$username."'"; 
+	$result = $pdo->prepare($sql);
+	$result->execute();
+	$user = $result->fetch();
+	
+	if(password_verify($pwd, $user['HashedPassword'])) {
+		header("location:../members.php");
+		exit();
+	} else {
+		header("location:login.php");
+		echo "Incorrect login details";
+	}
+	
+	
+//$dbUsername = mysqli_query($conn, "SELECT count(*) as total from members WHERE userID = '".$username."'");
 
-	
-	
-	
-$sql = mysqli_query($conn, "SELECT count(*) as total from members WHERE userID = '".$Username."' AND HashedPassword = '".$pwd."'");
-$rw = mysqli_fetch_array($sql);
-	
-	if($rw['total'] < 0) {
+
+//$dbPassword = (mysqli_query($conn, $sql));
+		
+	//if(password_verify($pwd, $dbPassword)) {
+		//header("location: ../members.php?user=$username");
+		//echo "Welcome $username";
+	//}
+}
+//$rw = mysqli_fetch_array($sql);
+	/*
+  	if($rw['total'] < 0) {
 		header("location:../Member_login.php");
 		exit();
 	} elseif($rw['total'] > 0) {
-		header("location: ../members.php?user=$Username");
-		echo "Welcome $Username";
+		header("location: ../members.php?user=$username");
+		echo "Welcome $username";
 	}
 }
+*/
 /*
 function uidExists($conn, $Username, $email) {
 	$sql = "SELECT * FROM members WHERE UserID = ? AND HashedPassword = ?";
