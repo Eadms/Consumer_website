@@ -1,12 +1,12 @@
 <?php 
 session_start();
-/*
+
 $serverName = "localhost";
 $dbusername = "root";
 $dbpassword = "";
 $dbname = "bazaarceramics_db";
 $conn = mysqli_connect($serverName, $dbusername, $dbpassword, $dbname);
-*/
+
 $pdo = new PDO("mysql:host=localhost;dbname=bazaarceramics_db;charset=utf8","root","");
 
 if (isset($_POST['email'], $_POST['Username'], $_POST['firstName'], $_POST['lastName'], $_POST['pwd'], $_POST['pwdRepeat'])) {
@@ -23,22 +23,12 @@ $_SESSION['lastName'] = $lastName;
 $_SESSION['email'] = $email;
 $_SESSION['Username'] = $Username;
 	
-	//$mysql = "SELECT * FROM customer WHERE CustomerEmail = '".$email."'";
-	
-	//OR WHERE CustomerGivenName AND CustomerLastName = '".$firstName."' AND '".$lastName."'
-	
+	//checks the customer table to see if there is an email that matches the email in the submitted form
 	$mysql = "SELECT * FROM customer WHERE CustomerEmail = '".$email."'"; 
 	$result = $pdo->prepare($mysql);
 	$result->execute();
 	$user = $result->fetch();
-	/*
-	if($email == $user['CustomerEmail']) {
-		header("location:../members.php");
-		exit();
-	} else {
-		header("location:../Member_login.php?login=error");
-	}
-	*/
+	
 	
 	if (!preg_match("/^[a-zA-Z]*$/", $firstName) || !preg_match("/^[a-zA-Z]*$/", $lastName)) {
 			header("location: ../member_registration.php?signup=char");
@@ -53,12 +43,12 @@ $_SESSION['Username'] = $Username;
 	header("location: ../member_registration.php?signup=Passworddontmatch");
 		exit();
 	} elseif($email !== $user['CustomerEmail']) {
-		header("location: ../Customer_registration.php?nomemberrecord");
-			exit();
+		header("location: ../Customer_registration.php?signup=norecord");
+		exit();
 	} else {
 	$register = "INSERT into members(UserID, HashedPassword, first_name, last_name, email)
 VALUES ('". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
-		mysqli_query($pdo, $register);
+		mysqli_query($conn, $register);
 		header('location: ../Member_login.php?'); //redirects the user to the login page if registration is successful
 	} 	
 }
