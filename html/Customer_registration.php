@@ -10,14 +10,14 @@
 	<?php 
 		include 'include_files/Navigation.inc';
 		include 'include_files/Banner.inc';
-		include 'include_files/Sign_up.php';
-		//error_reporting(0);
+		include 'include_files/Customer_Sign_up.php';
+		error_reporting(0);
 			?>
      </header>
 			 <p><h1>Customer Registration</h1></p>
 	<p>Register your details below to be added to our customer database</p>
 	<div class="form-container">
-        <form action="include_files/Sign_up.php" method="post" class="sign-up-form">		
+        <form action="include_files/Customer_Sign_up.php" method="post" class="sign-up-form">		
 			<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" value="<?php echo $_SESSION['firstName']?>" required>
 			<br>
 			<label for "lastName">Last name</label><input type="text" name= "lastName" placeholder=" Last name" value="<?php echo $_SESSION['lastName']?>" required>

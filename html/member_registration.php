@@ -11,7 +11,7 @@
 		include 'include_files/Navigation.inc';
 		include 'include_files/Banner.inc';
 		include 'include_files/member_signup.php';
-		//error_reporting(0);
+		error_reporting(0);
 			?>
      </header>
 			 <p><h1>Member Registration</h1></p>
