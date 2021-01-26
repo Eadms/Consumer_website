@@ -35,10 +35,10 @@ $_SESSION['Username'] = $Username;
 	header("location: ../Customer_registration.php?signup=Passworddontmatch");
 		exit();
 	} else {
-	$register = "INSERT into members(UserID, HashedPassword, first_name, last_name, email)
+	$register = "INSERT into customer(UserID, HashedPassword, first_name, last_name, email)
 VALUES ('". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
 		mysqli_query($pdo, $register);
-		header('location: ../Member_login.php?'); //redirects the user to the login page if registration is successful
+		header('location: ../member_signup.php?'); //redirects the user to the login page if registration is successful
 	} 
 	
 }

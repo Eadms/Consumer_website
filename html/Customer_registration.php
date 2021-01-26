@@ -24,11 +24,15 @@
 			<br>
 			<label for "email">Email</label><input type="text" name= "email" placeholder="Email" value="<?php echo $_SESSION['email']?>" required>
 			<br>
-			<label for "Username">Username</label><input type="text" name= "Username" placeholder="Username" value="<?php echo $_SESSION['Username']?>" required>
+			<label for "address">Street number and name</label><input type="text" name= "Address" placeholder="Street number and name" value="<?php echo $_SESSION['Address']?>" required>
 			<br>
-			<label for "pwd">Password</label><input type="password" name= "pwd" placeholder="Password" minlength="6" required>
+			<label for "suburb">Suburb</label><input type="text" name= "suburb" placeholder="Suburb" required>
 			<br>
-			<label for "pwdrepeat">Repeat Password</label><input type= "password" name="pwdRepeat" placeholder="Repeat Password" required>
+			<label for "state">State</label><input type= "text" name="state" placeholder="State" required>
+			<br>
+			<label for "postcode">Postcode</label><input type="text" name= "postcode" placeholder="Postcode" required>
+			<br>
+			<label for "phone">Phone number</label><input type= "text" name="phone" placeholder="Phone Number" required>
 			<br>
 			<button type="submit" name="reg_user" class="registration-button">Register details</button>
 			<button type="reset" name="cancel" class="registration-button">Cancel registration</button>
