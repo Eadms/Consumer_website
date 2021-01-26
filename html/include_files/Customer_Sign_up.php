@@ -43,4 +43,5 @@ VALUES ('". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFA
 	
 }
 
+
 ?>

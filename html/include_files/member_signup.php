@@ -29,7 +29,7 @@ $_SESSION['Username'] = $Username;
 	$result->execute();
 	$user = $result->fetch();
 	
-	
+		
 	if (!preg_match("/^[a-zA-Z]*$/", $firstName) || !preg_match("/^[a-zA-Z]*$/", $lastName)) {
 			header("location: ../member_registration.php?signup=char");
 			exit();
@@ -46,13 +46,13 @@ $_SESSION['Username'] = $Username;
 		header("location: ../Customer_registration.php?signup=norecord");
 		exit();
 	} else {
-	$register = "INSERT into members(UserID, HashedPassword, first_name, last_name, email)
-VALUES ('". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
+	$register = "INSERT into members(CustomerID, UserID, HashedPassword, first_name, last_name, email)
+VALUES ('". $user['CustomerEmail'] ."','". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
 		mysqli_query($conn, $register);
-		header('location: ../Member_login.php?'); //redirects the user to the login page if registration is successful
+		header('location: ../Member_login.php?login=success'); //redirects the user to the login page if registration is successful
 	} 	
 }
-//$checkmember = mysqli_query("SELECT * FROM customer WHERE CustomerEmail = $email or WHERE CustomerGivenName = $firstName and CustomerLastName = $lastName")
+
 
 /*
 if (empty(($_POST['email']) || ($_POST['Username']) || ($_POST['firstName']) || ($_POST['lastName']) || $_POST['pwd'] || $_POST['pwdRepeat'])) {
