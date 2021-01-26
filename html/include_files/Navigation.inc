@@ -29,10 +29,9 @@ echo '<nav>
 						<a href="/Bazaar_Ceramics_ss/html/Order_history.php">Order History</a>
 					</div>
 				</div></div>
-				<div class="nav-list"><a class="active" href="/Bazaar_Ceramics_ss/html/members.php">Members Page</a></div>
 		</div>
 				</nav>';
 	
-	
+	//<div class="nav-list"><a class="active" href="/Bazaar_Ceramics_ss/html/members.php">Members Page</a></div>
 	
 ?>

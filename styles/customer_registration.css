@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 .navigation {
         list-style-type: none;
         margin-left: auto;
@@ -85,6 +86,7 @@
   .page-link:hover {
         cursor: pointer;
   }
+
  h1 {
        font-family: Arial, Helvetica, sans-serif;
        text-align: center;
@@ -97,42 +99,11 @@
 	width: "1001";
 }
 
-.homepage-text {
-      font-family: Arial, Helvetica, sans-serif;
-}
-
-.homepage-header {
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-}
 p {
       font-family: Arial, Helvetica, sans-serif;
       margin-left: 20px;
       margin-right: 20px;
 	text-align: center;
-}
-.company-background-header {
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-}
-.products-heading {
-      font-family: Arial, Helvetica, sans-serif;
-}
-
-
-.gallery {
-      float: left;
-      margin-right: 20px;
-      margin-left: 20px;
-}
-.redpot {
-      float: right;
-      margin-left: 20px;
-      margin-right: 20px;
-}
-.mission-statement-header {
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
 }
 
 .form-container {
@@ -145,7 +116,12 @@ p {
 	width: 40%;
 }
 
-button {
+
+.login-form {
+	width: 40%;
+}
+
+.registration-button {
 	width: 40%;
 }
 

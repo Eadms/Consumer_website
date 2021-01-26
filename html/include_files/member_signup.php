@@ -28,7 +28,6 @@ $_SESSION['Username'] = $Username;
 	$result = $pdo->prepare($mysql);
 	$result->execute();
 	$user = $result->fetch();
-	
 		
 	if (!preg_match("/^[a-zA-Z]*$/", $firstName) || !preg_match("/^[a-zA-Z]*$/", $lastName)) {
 			header("location: ../member_registration.php?signup=char");
@@ -47,7 +46,7 @@ $_SESSION['Username'] = $Username;
 		exit();
 	} else {
 	$register = "INSERT into members(CustomerID, UserID, HashedPassword, first_name, last_name, email)
-VALUES ('". $user['CustomerEmail'] ."','". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
+VALUES ('". $user['CustomerID'] ."','". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
 		mysqli_query($conn, $register);
 		header('location: ../Member_login.php?login=success'); //redirects the user to the login page if registration is successful
 	} 	

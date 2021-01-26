@@ -15,7 +15,7 @@
 			?>
      </header>
 			 <p><h1>Member Registration</h1></p>
-	<p>Register your details below to be added to our member database</p>
+	<p>Register your details below to be added to our Member Database. <br><br> Please note that you will first need to be registered on our Customer Databased in order to register on our Member Database</p>
 	<div class="form-container">
         <form action="../html/include_files/member_signup.php" method="post" class="sign-up-form">
 			<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" value="<?php echo $_SESSION['firstName']?>" required>
@@ -30,8 +30,8 @@
 			<br>
 			<label for "pwdrepeat">Repeat Password</label><input type= "password" name="pwdRepeat" placeholder="Repeat Password" required>
 			<br>
-			<button type="submit" name="reg_user">Register details</button>
-			<button type="reset" name="cancel">Cancel registration</button>
+			<button type="submit" name="reg_user" class="registration-button">Register details</button>
+			<button type="reset" name="cancel" class="registration-button">Cancel registration</button>
 	</form>
 	</div>
 		<?php 		
