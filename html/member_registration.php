@@ -52,8 +52,8 @@
 			} elseif($signupCheck == "Passworddontmatch") {
 			echo '<p class="error">Password does not match</p>';
 			exit(); 
-			} elseif($signupCheck == "success") {
-				echo "success";
+			} elseif($signupCheck == "customerregistration") {
+				echo "<script>alert('You have successfullly registered as a Customer. Please register as a Member to access the Members Page.);</script>";
 				exit();
 			}
 		} 
