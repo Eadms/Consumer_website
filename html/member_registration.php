@@ -35,12 +35,15 @@
 	</form>
 	</div>
 		<?php 		
-		if(!isset($_GET['signup'])) {
-			exit();
-		} else {
+		//if(!isset($_GET['signup'])) {
+			//exit();
+		//} else {
 			$signupCheck = $_GET['signup'];
 			
-			if($signupCheck == "char") {
+			if($signupCheck == "customerregistration") {
+				echo "<script>alert('You have successfullly registered as a Customer. Please register as a Member to access the Members Page.);</script>";
+				exit();
+			}elseif($signupCheck == "char") {
 			echo '<p class="error">Please only user letters in your first and last name</p>';
 			exit(); 
 			} elseif($signupCheck == "email") {
@@ -52,11 +55,9 @@
 			} elseif($signupCheck == "Passworddontmatch") {
 			echo '<p class="error">Password does not match</p>';
 			exit(); 
-			} elseif($signupCheck == "customerregistration") {
-				echo "<script>alert('You have successfullly registered as a Customer. Please register as a Member to access the Members Page.);</script>";
-				exit();
-			}
-		} 
+			} 
+			
+		 
 		?>
 </body>
 </html>

@@ -13,6 +13,9 @@
 		include 'include_files/Customer_Sign_up.php';
 		error_reporting(0);
 			?>
+		<script>
+	function myWindow() {window.location.replace("../Homepage.php")};
+	</script>
 		     </header>
 			 <p><h1>Customer Registration</h1></p>
 	<p>Register your details below to be added to our customer database</p>
@@ -37,8 +40,8 @@
 			<label for "phone">Phone number</label><input type= "text" name="phone" placeholder="Phone Number" value="<?php echo $_SESSION['phone']?>" required>
 			<br>
 			<button type="submit" name="reg_user" class="registration-button">Register details</button>
-			<button type="reset" name="reset" class="registration-button">Reset form</button>
-			<button type="submit" name="cancel" class="registration-button">Cancel Registration</button>
+			<button type="reset" value="reset" class="registration-button">Reset form</button>
+			<button  type="button" onclick="myWindow()" class="registration-button">Cancel Registration</button>
 	</form>
 	</div>
 		<?php 		

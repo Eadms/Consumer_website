@@ -21,7 +21,9 @@ $sql = "SELECT * FROM members WHERE UserID = '".$username."'";
 		header("location:../Member_login.php?login=error");
 	}
 	
+
 	
+
 //$dbUsername = mysqli_query($conn, "SELECT count(*) as total from members WHERE userID = '".$username."'");
 
 

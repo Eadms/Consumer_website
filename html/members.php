@@ -11,6 +11,7 @@
 		<header class="content">
 			<?php include 'include_files/Navigation.inc'; ?>
 			<?php include 'include_files/Banner.inc';?>
+			<?php include 'include_files/login_sessions.php'?>
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
 		</header>
