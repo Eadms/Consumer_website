@@ -11,7 +11,76 @@
 		<header class="content">
 			<?php include 'include_files/Navigation.inc'; ?>
 			<?php include 'include_files/Banner.inc';?>
-			<?php include 'include_files/login_sessions.php'?>
+			<?php include 'include_files/login.php';
+
+			class User {
+    public $email;
+    public $firstName;
+    public $lastName;
+    public $isLoggedIn = false;
+    function __construct() {
+        if (session_id() == "") {
+            session_start();
+        }
+if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] == true) {
+    $this->_initUser();
+        }
+    } //end __construct
+    public function authenticate($user,$pwd) {
+        $mysqli = new mysqli("localhost","root","","bazaarceramics_db");
+        if ($mysqli->connect_errno) {
+                error_log("Cannot connect to MySQL: " . $mysqli->connect_error);
+                return false;
+        }
+        $safeUser = $mysqli->real_escape_string($user);
+        $incomingPassword = $mysqli->real_escape_string($pwd);
+        $query = "SELECT * from Customer WHERE email = '{$safeUser}'";
+        if (!$result = $mysqli->query($query)) {
+            error_log("Cannot retrieve account for {$user}");
+            return false;
+        }
+        // Will be only one row, so no while() loop needed
+        $row = $result->fetch_assoc();
+        $dbPassword = $row['password'];
+        if (crypt($incomingPassword,$dbPassword) != $dbPassword) {
+            error_log("Passwords for {$user} don't match");
+            return false;
+        }
+        $this->id = $row['id'];
+        $this->email = $row['email'];
+        $this->firstName = $row['first_name'];
+        $this->lastName = $row['last_name'];
+        $this->isLoggedIn = true;
+        $this->_setSession();
+        return true;
+    } //end function authenticate
+    private function _setSession() {
+        if (session_id() == '') {
+            session_start();
+        }
+        $_SESSION['id'] = $this->id;
+        $_SESSION['email'] = $this->email;
+        $_SESSION['firstName'] = $this->firstName;
+        $_SESSION['lastName'] = $this->lastName;
+        $_SESSION['isLoggedIn'] = $this->isLoggedIn;
+    } //end function setSession
+    private function _initUser() {
+        if (session_id() == '') {
+            session_start();
+        }
+        $this->id = $_SESSION['id'];
+        $this->email = $_SESSION['email'];
+        $this->firstName = $_SESSION['firstName'];
+        $this->lastName = $_SESSION['lastName'];
+        $this->isLoggedIn = $_SESSION['isLoggedIn'];
+    } //end function initUser
+} //end class User
+			
+$user = new User;
+if (!$user->isLoggedIn) {
+        die(header("Location: Member_login.php"));
+}
+			?>
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
 		</header>

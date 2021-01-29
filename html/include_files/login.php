@@ -14,8 +14,11 @@ $sql = "SELECT * FROM members WHERE UserID = '".$username."'";
 	$result->execute();
 	$user = $result->fetch();
 	
+	
 	if(password_verify($pwd, $user['HashedPassword'])) {
 		header("location:../members.php");
+		//session_start();
+		//$_SESSION['firstName'] = $userRow[1];
 		exit();
 	} else {
 		header("location:../Member_login.php?login=error");
