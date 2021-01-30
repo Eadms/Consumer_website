@@ -13,6 +13,9 @@
 			<?php include 'include_files/Banner.inc';?>
 			<?php include 'include_files/login.php';
 
+if (isset($_SESSION['firstName'])) {
+echo "Welcome";
+}; /*
 			class User {
     public $email;
     public $firstName;
@@ -80,6 +83,7 @@ $user = new User;
 if (!$user->isLoggedIn) {
         die(header("Location: Member_login.php"));
 }
+*/
 			?>
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->

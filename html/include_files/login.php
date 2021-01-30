@@ -8,7 +8,8 @@ $pdo = new PDO("mysql:host=localhost;dbname=bazaarceramics_db;charset=utf8","roo
 if (isset($_POST['Username'], $_POST['password'])) {
 $username = $_POST['Username'];
 $pwd = $_POST['password'];
-	
+
+
 $sql = "SELECT * FROM members WHERE UserID = '".$username."'"; 
 	$result = $pdo->prepare($sql);
 	$result->execute();
@@ -17,15 +18,16 @@ $sql = "SELECT * FROM members WHERE UserID = '".$username."'";
 	
 	if(password_verify($pwd, $user['HashedPassword'])) {
 		header("location:../members.php");
-		//session_start();
+		session_start();
 		//$_SESSION['firstName'] = $userRow[1];
+		$_SESSION['firstName'] = $user;
+		$_SESSION['password'] = $pwd;
 		exit();
 	} else {
 		header("location:../Member_login.php?login=error");
 	}
 	
 
-	
 
 //$dbUsername = mysqli_query($conn, "SELECT count(*) as total from members WHERE userID = '".$username."'");
 
