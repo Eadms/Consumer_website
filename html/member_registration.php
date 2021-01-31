@@ -34,6 +34,18 @@
 			<button type="reset" name="cancel" class="registration-button">Cancel registration</button>
 	</form>
 	</div>
+	
+	<script language="javascript">
+	//const queryString1 = window.location.search; 
+	//const urlParams = new URLSearchParams(queryString);
+	//const imageSlice = urlParam.get("signup");
+		
+		
+		//if(urlParam.get("signup") == "customerregistration") {
+			//alert('You have successfullly registered as a Customer. Please register as a Member to access the Members Page.')
+		//}
+	
+	</script>
 		<?php 		
 		//if(!isset($_GET['signup'])) {
 			//exit();
@@ -41,7 +53,7 @@
 			$signupCheck = $_GET['signup'];
 			
 			if($signupCheck == "customerregistration") {
-				echo "<script>alert('You have successfullly registered as a Customer. Please register as a Member to access the Members Page.);</script>";
+				echo "<script language='Javascript'>alert('You have successfullly registered as a Customer. Please register as a Member to access the Members Page.');</script>";
 				exit();
 			}elseif($signupCheck == "char") {
 			echo '<p class="error">Please only user letters in your first and last name</p>';

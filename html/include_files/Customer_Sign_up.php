@@ -43,7 +43,8 @@ $_SESSION['country'] = $country;
 	$register = "INSERT into customer(CustomerGivenName, CustomerLastName, CustomerEmail, CustomerAddress, CustomerSuburb, CustomerState, CustomerPostCode, CustomerCountry, CustomerPhoneNumber)
 VALUES ('".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."', '".$_POST['address'] ."','".$_POST['suburb'] ."','". $_POST['state'] ."', '".$_POST['postcode'] ."','".$_POST['country'] ."','". $_POST['phone'] ."')";
 		mysqli_query($conn, $register);
-		header('location: ../member_registration.php?signup=customerregistration'); //redirects the user to the login page if registration is successful
-	} 
+		header('location: ../member_registration.php?signup=customerregistration');
+		//echo "<script>alert('You have been added into our Member Database. Please login to our Member's page to continue.);</script>";//redirects the user to the login page if registration is successful
+		}
 }
 ?>

@@ -36,6 +36,8 @@
 			} elseif($signupCheck == "error") {
 			echo '<p class="error">Your username or password is incorrect. Please try again</p>';
 			exit(); 
+			} elseif($signupCheck == "notloggedin") {
+				echo "<script>alert('Please login to continue to the Members page.);</script>";
 			}
 	}
 	?>
