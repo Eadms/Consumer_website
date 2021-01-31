@@ -163,3 +163,7 @@ button {
 html, body {
 	margin: 0;
 }
+.welcome-message {
+	text-align: right;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+}

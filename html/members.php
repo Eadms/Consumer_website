@@ -11,7 +11,23 @@
 		<header class="content">
 			<?php include 'include_files/Navigation.inc';
 			include 'include_files/Banner.inc';
-			include 'include_files/login.php';?>			
+			include 'include_files/login.php';
+		/*
+if(!isset($_GET['login'])) {
+	$loginCheck = $_GET['login'];
+ if($loginCheck == "success") {
+				echo "<script>alert('Welcome back Name. You are now logged in.');</script>";
+	}
+	}
+	*/
+//if (isset($_SESSION['Member'])) {
+//echo '<p class="welcome-message">Welcome</p><a href="include_files/logout.php">Logout</a>';
+//} else
+	
+	if(!isset($_SESSION['Member'])) {
+	header("location: Member_login.php?login=notloggedin"); //redirects user if they are not logged in
+}
+			?>			
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
 		</header>
@@ -46,17 +62,6 @@
 					<td>Turquoise bowl - $40</td>
 				</tr>
 			</table>
-		<?php
-if(!isset($_GET['login'])) {
-	$loginCheck = $_GET['login'];
-} if($loginCheck == "success") {
-				echo "<script>alert('Welcome back Name. You are now logged in.');</script>";
-	}
-if (isset($_SESSION['Username'])) {
-echo '<p class="welcome-message">Welcome</p><br><a href="include_files/logout.php">Logout</a>';
-	exit();
-} elseif(!isset($_SESSION['Username'])) {
-	header("location: Member_login.php?login=notloggedin");
-};?>
+	
 	</body>
 </html>

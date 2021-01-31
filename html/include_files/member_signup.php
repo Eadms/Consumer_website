@@ -1,6 +1,4 @@
 <?php 
-session_start();
-
 $serverName = "localhost";
 $dbusername = "root";
 $dbpassword = "";
@@ -48,7 +46,8 @@ $_SESSION['Username'] = $Username;
 	$register = "INSERT into members(CustomerID, UserID, HashedPassword, first_name, last_name, email)
 VALUES ('". $user['CustomerID'] ."','". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
 		mysqli_query($conn, $register);
-		header('location: ../Member_login.php?login=success'); //redirects the user to the login page if registration is successful
+		header('location: ../Member_login.php?login=success'); //redirects the user to the login page if registration is successful 
+		session_unset(); //unsets the variables set when creating an account
 	} 	
 }
 

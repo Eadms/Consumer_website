@@ -1,4 +1,4 @@
-<?php 
+<?php
 echo '<nav>
 				<div class="navigation">
 				<div class="nav-list" id="about-us"><a href="/Bazaar_Ceramics_ss/Homepage.php">Home Page</a></div>
@@ -22,6 +22,7 @@ echo '<nav>
 			</div></div>
 				<div class="nav-list"><a href="/Bazaar_Ceramics_ss/html/Customer_registration.php">Customer Registration</a></div>
 				<div class="nav-list"><a href="/Bazaar_Ceramics_ss/html/member_registration.php">Member Registration</a></div>
+				<div class="nav-list"><a class="active" href="/Bazaar_Ceramics_ss/html/members.php">Members Page</a></div>
 				<div class="dropdown">
 					<div class="nav-list"><a href="/Bazaar_Ceramics_ss/html/Member_login.php">Member Login</a>
 					<div class="catalogue-dropdown-content">
@@ -31,7 +32,4 @@ echo '<nav>
 				</div></div>
 		</div>
 				</nav>';
-	
-	//<div class="nav-list"><a class="active" href="/Bazaar_Ceramics_ss/html/members.php">Members Page</a></div>
-	
 ?>
