@@ -7,8 +7,10 @@
 </head>
     <body>
         <header>
-			<?php include 'include_files/Navigation.inc'; ?>
-                <?php include 'include_files/Banner.inc';?>
+			<?php include 'include_files/Navigation.inc'; 
+                 include 'include_files/Banner.php';
+			include 'include_files/logout.php';
+			?>
         </header>
         <h1 class='company-background-header'>Company Background</h1>
         <p>Bazaar Ceramics Studio has been operating for 20 years.  We started as a small collective, operating in the picturesque township of Hahndorf, South Australia - known for its quality arts and crafts.  Over the years the studio has passed through a number of transformations.  In the first 7 years of its existence - as a co-operative, it was well known for producing quality domestic ware and fine individually designed art pieces. 

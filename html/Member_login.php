@@ -8,7 +8,7 @@
 <body>
     <header>
 		<?php include 'include_files/Navigation.inc';
-         include 'include_files/Banner.inc';
+         include 'include_files/Banner.php';
 	include 'include_files/login.php';
 		?>
     </header>

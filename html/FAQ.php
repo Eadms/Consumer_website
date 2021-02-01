@@ -7,8 +7,9 @@
 </head>
 <body>
     <header>
-       <?php include 'include_files/Navigation.inc'; ?>
-        <?php include 'include_files/Banner.inc';?>
+       <?php include 'include_files/Navigation.inc';
+         include 'include_files/Banner.php';
+		?>
     </header>
     <h1>FAQ</h1>
     <p>Page under construction</p>

@@ -1,6 +1,5 @@
 <?php
-echo '<nav>
-				<div class="navigation">
+echo '<nav class="navigation">
 				<div class="nav-list" id="about-us"><a href="/Bazaar_Ceramics_ss/Homepage.php">Home Page</a></div>
 				<div class="dropdown">
 				<div class="nav-list"><a href="/Bazaar_Ceramics_ss/html/About_us.php">About us</a>
@@ -30,6 +29,5 @@ echo '<nav>
 						<a href="/Bazaar_Ceramics_ss/html/Order_history.php">Order History</a>
 					</div>
 				</div></div>
-		</div>
 				</nav>';
 ?>

@@ -8,8 +8,9 @@
 </head>
 <body onload="myFunction()">
 <header>
-  <?php include 'include_files/Navigation.inc'; ?>
-        <?php include 'include_files/Banner.inc';?>
+  <?php include 'include_files/Navigation.inc'; 
+         include 'include_files/Banner.php';
+	?>
 </header>
 <h1>Production and design process</h1>
 <p>

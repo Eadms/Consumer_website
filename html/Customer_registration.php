@@ -9,7 +9,7 @@
     <header>
 	<?php 
 		include 'include_files/Navigation.inc';
-		include 'include_files/Banner.inc';
+		include 'include_files/Banner.php';
 		include 'include_files/Customer_Sign_up.php';
 		error_reporting(0);
 			?>

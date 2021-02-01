@@ -6,8 +6,9 @@
     <title>About us</title>
 </head>
 <header>
-    <?php include 'include_files/Navigation.inc'; ?>
-    <?php include 'include_files/Banner.inc';?>
+    <?php include 'include_files/Navigation.inc'; 
+     include 'include_files/Banner.php';
+	?>
 </header>
 <body>
     <h1>About us</h1>
