@@ -27,7 +27,7 @@
 			<br>
 			<label for "email">Email</label><input type="text" name= "email" placeholder="Email" value="<?php echo $_SESSION['email']?>">
 			<br>
-			<label for "address">Street number and name</label><input type="text" name= "address" placeholder="Street number and name" value="<?php echo $_SESSION['address']?>" required>
+			<label for "address">Street Address</label><input type="text" name= "address" placeholder="Street number and name" value="<?php echo $_SESSION['address']?>" required>
 			<br>
 			<label for "suburb">Suburb</label><input type="text" name= "suburb" placeholder="Suburb" value="<?php echo $_SESSION['suburb']?>" required>
 			<br>

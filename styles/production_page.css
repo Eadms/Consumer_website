@@ -1,95 +1,85 @@
 .navigation {
-    list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: white;
-}
+	display: flex;
+	justify-content: center;
+        list-style-type: none;
+        overflow: hidden;
+        background-color: white;
+  }
 
-.banner {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-	height: "292"; 
-	width: "1001";
-}
-
-.catalogue-dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.catalogue-dropdown-content:hover {
-  display: block;
-}
-
-.catalogue-dropdown-content a {
-  text-decoration: none;
-  color: black;
-  padding: 12px 16px;
-  display: block;
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+  .catalogue-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
   
-.navigation a:hover {
-  background-color: #d17907;
-}
-
-.dropdown:hover .catalogue-dropdown-content {
-  display: block;
-}
-/* Links inside the dropdown */
-.dropdown-content a {
-  text-decoration: none;
-  color: black;
-  padding: 12px 16px;
-  display: block;
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-#about-us {
-  margin-left: 10%;
-}
-.nav-list {
-      float: left;
-      font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-    
-.nav-list a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.nav-list:hover {
+  .catalogue-dropdown-content:hover {
+    display: block;
+  }
+  
+  .navigation a:hover {
       background-color: #d17907;
-}
+  }
+
+  .catalogue-dropdown-content a {
+    text-decoration: none;
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
     
-.page-link:hover {
-      cursor: pointer;
-}
+  .dropdown:hover .catalogue-dropdown-content {
+    display: block;
+  }
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    text-decoration: none;
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .nav-list {
+        float: left;
+        font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+      
+  .nav-list a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  li a:hover {
+        background-color: #d17907;
+  }
+      
+  .page-link:hover {
+        cursor: pointer;
+  }
 
 h1 {
      font-family: Arial, Helvetica, sans-serif;
