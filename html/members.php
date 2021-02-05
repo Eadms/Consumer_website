@@ -10,7 +10,7 @@
 	<body class="member-body">
 		<header class="content">
 			<?php include 'include_files/Navigation.inc';
-			include 'include_files/Banner.php';
+			include 'include_files/Banner_and_welcome_message.php';
 			include 'include_files/login.php';
 		/*
 if(!isset($_GET['login'])) {

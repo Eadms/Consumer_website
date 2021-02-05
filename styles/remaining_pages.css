@@ -61,7 +61,7 @@
   
   .nav-list {
         float: left;
-        font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-family: Arial, Helvetica, sans-serif;
   }
       
   .nav-list a {
@@ -154,7 +154,7 @@ button {
 
 .error {
 	color: red;
-	font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-family: arial, helvetica, sans-serif;
 }
 
 html, body {
@@ -162,5 +162,5 @@ html, body {
 }
 .welcome-message {
 	text-align: right;
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-family: arial, helvetica, sans-serif;
 }

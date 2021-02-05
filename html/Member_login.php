@@ -8,7 +8,7 @@
 <body>
     <header>
 		<?php include 'include_files/Navigation.inc';
-         include 'include_files/Banner.php';
+         include 'include_files/Banner_and_welcome_message.php';
 	include 'include_files/login.php';
 		?>
     </header>
@@ -26,20 +26,23 @@
 		<button type="reset" class="login-button">Reset</button>
 	</form>
 		</div>
+	
+
 	<?php 
-	if(!isset($_GET['login'])) {
-			exit();
-		} else {
-			$signupCheck = $_GET['login'];
-			if($signupCheck == "success") {
-				echo "<script>alert('You have been added into our Member Database. Please login to our Member's page to continue.);</script>";
-			} elseif($signupCheck == "error") {
+	//if(!isset($_GET['login'])) {
+			//exit();
+		//} else {
+			$loginCheck = $_GET['login'];
+			if($loginCheck == "success") {
+				echo "<script language='Javascript'>alert('You have been successfully added to our Member database. Please login to access the Members page');</script>";
+				exit();
+			} elseif($loginCheck == "error") {
 			echo '<p class="error">Your username or password is incorrect. Please try again</p>';
 			exit(); 
-			} elseif($signupCheck == "notloggedin") {
+			} elseif($loginCheck == "notloggedin") {
 				echo "<script>alert('Please login to continue to the Members page.);</script>";
 			}
-	}
+	
 	?>
 </body>
 </html>

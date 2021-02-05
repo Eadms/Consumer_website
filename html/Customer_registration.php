@@ -9,7 +9,7 @@
     <header>
 	<?php 
 		include 'include_files/Navigation.inc';
-		include 'include_files/Banner.php';
+		include 'include_files/Banner_and_welcome_message.php';
 		include 'include_files/Customer_Sign_up.php';
 		error_reporting(0);
 			?>
@@ -18,7 +18,7 @@
 	</script>
 		     </header>
 			 <p><h1>Customer Registration</h1></p>
-	<p>Register your details below to be added to our customer database</p>
+	<p class='instructions'>Register your details below to be added to our customer database</p>
 	<div class="form-container">
         <form action="include_files/Customer_Sign_up.php" method="post" class="sign-up-form">		
 			<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" value="<?php echo $_SESSION['firstName']?>" required>
@@ -27,7 +27,7 @@
 			<br>
 			<label for "email">Email</label><input type="text" name= "email" placeholder="Email" value="<?php echo $_SESSION['email']?>">
 			<br>
-			<label for "address">Street Address</label><input type="text" name= "address" placeholder="Street number and name" value="<?php echo $_SESSION['address']?>" required>
+			<label for "address">Street Address</label><input type="text" name= "address" placeholder="Street Address" value="<?php echo $_SESSION['address']?>" required>
 			<br>
 			<label for "suburb">Suburb</label><input type="text" name= "suburb" placeholder="Suburb" value="<?php echo $_SESSION['suburb']?>" required>
 			<br>
@@ -55,10 +55,7 @@
 			} elseif($signupCheck == "whitespace") {
 			echo '<p class="error">Please do not include spaces in your phone number</p>';
 			exit(); 
-			} elseif($signupCheck == "success") {
-				echo "success";
-				exit();
-			} 												
+			}  												
 		?>
 </body>
 </html>

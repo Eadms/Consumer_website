@@ -1,9 +1,9 @@
 .navigation {
 	display: flex;
 	justify-content: center;
-        list-style-type: none;
-        overflow: hidden;
-        background-color: white;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: white;
   }
 
   .catalogue-dropdown-content {
@@ -92,7 +92,7 @@
 	width: "1001";
 }
 
-p {
+.instructions {
       font-family: Arial, Helvetica, sans-serif;
       margin-left: 20px;
       margin-right: 20px;
@@ -136,4 +136,9 @@ input {
 	text-align: center;
 	font-weight: bold;
 	font-family: arial, helvetica, sans-serif;
+}
+
+.welcome-message {
+	text-align: right;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 }

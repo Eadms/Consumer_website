@@ -50,18 +50,4 @@ VALUES ('". $user['CustomerID'] ."','". $_POST['Username'] ."','". password_hash
 		session_unset(); //unsets the variables set when creating an account
 	} 	
 }
-
-
-/*
-if (empty(($_POST['email']) || ($_POST['Username']) || ($_POST['firstName']) || ($_POST['lastName']) || $_POST['pwd'] || $_POST['pwdRepeat'])) {
-	header('location: ../Customer_registration.php?missingdata');
-	echo 'Please complete all fields';
-}
-if (empty($_POST['email'])) {
-	header('location: ../Customer_registration.php?Noemail');
-	$emailError = 'Please enter your email';
-}
-
-*/
-
 ?>
