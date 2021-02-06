@@ -66,13 +66,14 @@
 		<?php 	
 	if(!isset($_GET['signup'])) { //checks if the query string key exists
 			exit();
+	} else {
 			$signupCheck = $_GET['signup']; //creates a variable based on the query string
 			if($signupCheck == "norecord") {
 				echo "<script>alert('You have no record in our member database so you have been redirected to our Customer Registration page. Please sign up to our customer database.');</script>"; //alert message which displays based on the query string after the user has been redirected from the member registration page if htey don't have a member record
-				exit();
+				//exit();
 			} elseif($signupCheck == "email") { //error messages
 			echo '<p class="error">Invalid email</p>';
-			exit(); 
+			//exit(); 
 			} elseif($signupCheck == "whitespace") {
 			echo '<p class="error">Please do not include spaces in your phone number</p>';
 			exit(); 

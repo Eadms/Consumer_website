@@ -6,7 +6,7 @@ require 'database.php';
 //$dbname = "bazaarceramics_db";
 //$conn = mysqli_connect($serverName, $dbusername, $dbpassword, $dbname);
 
-//$pdo = new PDO("mysql:host=localhost;dbname=bazaarceramics_db;charset=utf8","root","");
+$pdo = new PDO("mysql:host=localhost;dbname=bazaarceramics_db;charset=utf8","root","");
 
 if (isset($_POST['email'], $_POST['Username'], $_POST['firstName'], $_POST['lastName'], $_POST['pwd'], $_POST['pwdRepeat'])) {
 $email = $_POST['email']; //creates variables based on the user's inputs into the input boxes
