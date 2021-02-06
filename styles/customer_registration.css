@@ -103,6 +103,7 @@
 	display: flex;
 	justify-content: center;
 	flex-wrap: nowrap;
+	align-items: center;
 }
 
 .sign-up-form {
@@ -115,7 +116,8 @@
 }
 
 .registration-button {
-	width: 40%;
+	margin-top: 1%;
+	margin-left: 1%;
 }
 
 label {
@@ -140,5 +142,22 @@ input {
 
 .welcome-message {
 	text-align: right;
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-family: arial, helvetica, sans-serif;
+	margin-right: 10%;
+}
+
+.form-text {
+	font-family: arial, helvetica, sans-serif;
+	text-align: center;
+}
+
+.login-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.login-button {
+	margin-top: 1%;
 }

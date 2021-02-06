@@ -13,7 +13,7 @@
 		?>
     </header>
     <h1>Member Login</h1>
-	<p>Use the form below to login to the Bazaar Ceramics Members page</p>
+	<p class='form-text'>Use the form below to login to the Bazaar Ceramics Members page</p>
 	<div class="form-container"> <!-- form for the member to login -->
     	<form action="include_files/login.php" method="post" class="login-form">
 			<label for="Username">Username</label>
@@ -22,10 +22,12 @@
 			<label for="password">Password</label>
 				<input type="password" name="password" placeholder="Password" required>
 				<br>
+			</div>
+		<div class="login-container">
 			<button type="submit" class="login-button">Login</button>
 			<button type="reset" class="login-button">Reset</button>
+		</div>
 		</form>
-	</div>
 	<?php 
 	if(!isset($_GET['login'])) { //checks if the query string key exists
 			exit();

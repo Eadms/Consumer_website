@@ -9,7 +9,6 @@
         <header>
 			<?php include 'include_files/Navigation.inc'; 
                  include 'include_files/Banner_and_welcome_message.php';
-			include 'include_files/logout.php';
 			?>
         </header>
         <h1 class='company-background-header'>Company Background</h1>

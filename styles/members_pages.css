@@ -138,7 +138,7 @@ span.psw {
 
 .nav-list {
       float: left;
-      font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      font-family:arial, helvetica, sans-serif;
 }
     
 .nav-list a {
@@ -171,7 +171,7 @@ img {
   text-align: center;  
   width: 1001px; 
   margin:0px;
-  font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family:arial, helvetica, sans-serif;
   }
 
 .member-h2 {
@@ -180,7 +180,7 @@ img {
   width: 1001px;
   margin: 0px;
   position: relative;
-  font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family:arial, helvetica, sans-serif;
   }
 
 
@@ -200,7 +200,7 @@ table, tr, td, th {
   margin-top: 20px;
   background-color:#CC6600;
   position: relative;
-  font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family:arial, helvetica, sans-serif;
   }
 
 html, body {
@@ -228,10 +228,10 @@ footer {
   left:0px;
   bottom: 1px;
   margin-top: 20px;
-  font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family:arial, helvetica, sans-serif;
   }
 
 .welcome-message {
 	text-align: right;
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-family: arial, helvetica, sans-serif;
 }

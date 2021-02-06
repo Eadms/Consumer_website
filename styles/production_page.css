@@ -61,7 +61,7 @@
   
   .nav-list {
         float: left;
-        font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-family:Arial, Helvetica, sans-serif;
   }
       
   .nav-list a {
@@ -140,5 +140,6 @@ img {
 
 .welcome-message {
 	text-align: right;
-	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-family: Arial, Helvetica, sans-serif;
+	margin-right: 10%;
 }
