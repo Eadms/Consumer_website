@@ -1,13 +1,5 @@
 <?php 
 require 'database.php';
-//$serverName = "localhost";
-//$dbusername = "root";
-//$dbpassword = "";
-//$dbname = "bazaarceramics_db";
-//$conn = mysqli_connect($serverName, $dbusername, $dbpassword, $dbname);
-
-//$pdo = new PDO("mysql:host=localhost;dbname=bazaarceramics_db;charset=utf8","root","");
-
 //creates variables based on the information submitted by the user in the input fields
 if (isset($_POST['email'], $_POST['firstName'], $_POST['lastName'], $_POST['address'], $_POST['suburb'], $_POST['state'], $_POST['postcode'], $_POST['phone'], $_POST['country'])) {
 $email = $_POST['email'];
@@ -20,6 +12,7 @@ $postcode = $_POST['postcode'];
 $phone = $_POST['phone'];
 $country = $_POST['country'];
 
+session_start(); //creates a session so that the form data remains in the input boxes after the page is redirected
 //session variables to keep form data in form when page refreshes with error message. 	
 $_SESSION['firstName'] = $firstName;
 $_SESSION['lastName'] = $lastName;

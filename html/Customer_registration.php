@@ -9,8 +9,9 @@
     <header>
 	<?php 
 		include 'include_files/Navigation.inc';
-		include 'include_files/Banner_and_welcome_message.php';
+		include 'include_files/Banner.php';
 		include 'include_files/Customer_Sign_up_functions.php';
+		include 'include_files/Welcome_message.php';
 		?>
 	<script>
 	function myWindow() {window.location.replace("../Homepage.php")}; //function which closes the window when user clicks the cancel button

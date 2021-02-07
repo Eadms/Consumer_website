@@ -10,20 +10,10 @@
 	<body class="member-body">
 		<header class="content">
 			<?php include 'include_files/Navigation.inc';
-			include 'include_files/Banner_and_welcome_message.php';
+			include 'include_files/Banner.php';
 			include 'include_files/member_login_functions.php';
-		/*
-if(!isset($_GET['login'])) {
-	$loginCheck = $_GET['login'];
- if($loginCheck == "success") {
-				echo "<script>alert('Welcome back Name. You are now logged in.');</script>";
-	}
-	}
-	*/
-//if (isset($_SESSION['Member'])) {
-//echo '<p class="welcome-message">Welcome</p><a href="include_files/logout.php">Logout</a>';
-//} else
-	
+			include 'include_files/Welcome_message.php';
+
 	if(!isset($_SESSION['Member'])) {
 	header("location: Member_login.php?login=notloggedin"); //redirects user if they are not logged in
 }

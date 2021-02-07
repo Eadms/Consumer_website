@@ -8,7 +8,8 @@
 <body>
     <header>
        <?php include 'include_files/Navigation.inc'; 
-             include 'include_files/Banner_and_welcome_message.php';
+             include 'include_files/Banner.php';
+		include 'include_files/Welcome_message.php';
 		?>
     </header>
     <h1 class='mission-statement-header'>Mission Statement</h1>

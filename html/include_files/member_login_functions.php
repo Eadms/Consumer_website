@@ -13,7 +13,7 @@ $sql = "SELECT * FROM members WHERE UserID = '".$username."'"; //selects  user r
 
 	if(password_verify($pwd, $row['HashedPassword'])) { //decrypts the hashed password on the db and compares to the password entered into the input box
 		header("location:../members.php?login=success"); //redirects the user to the members page if successful
-		//session_start(); //starts the session 
+		session_start(); //starts the session 
 		$_SESSION['Member'] = $row['UserID']; //creates session variables that correspond to the username and first name
 		$_SESSION['first_name'] = $row['first_name'];
 		exit();
