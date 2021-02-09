@@ -7,9 +7,9 @@
         <title>Product Order Form</title> 
     </head>
     <body>
-       <?php include 'include_files/Navigation.inc'; 
-             include 'include_files/Banner.php';
-		include 'include_files/Welcome_message.php';
+       <?php include 'include_files/Navigation.inc.php'; 
+             include 'include_files/Banner.inc.php';
+		include 'include_files/Welcome_message.inc.php';
 		?>
         <header><h1 id="header" class="order-header">Product Order</h1></header>
             <table id="image-table"></table>

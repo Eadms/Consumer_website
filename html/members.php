@@ -9,10 +9,10 @@
 	</head>
 	<body class="member-body">
 		<header class="content">
-			<?php include 'include_files/Navigation.inc';
-			include 'include_files/Banner.php';
-			include 'include_files/member_login_functions.php';
-			include 'include_files/Welcome_message.php';
+			<?php include 'include_files/Navigation.inc.php';
+			include 'include_files/Banner.inc.php';
+			include 'include_files/member_login_functions.inc.php';
+			include 'include_files/Welcome_message.inc.php';
 
 	if(!isset($_SESSION['Member'])) {
 	header("location: Member_login.php?login=notloggedin"); //redirects user if they are not logged in

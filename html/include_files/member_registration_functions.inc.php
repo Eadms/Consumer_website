@@ -1,5 +1,5 @@
 <?php 
-require 'database.php';
+require 'database.inc.php';
 $pdo = new PDO("mysql:host=localhost;dbname=bazaarceramics_db;charset=utf8","root","");
 
 if (isset($_POST['email'], $_POST['Username'], $_POST['firstName'], $_POST['lastName'], $_POST['pwd'], $_POST['pwdRepeat'])) {
@@ -9,14 +9,6 @@ $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $pwd = $_POST['pwd'];
 $pwdrepeat = $_POST['pwdRepeat'];
-
-session_start(); //creates a session so that the form data remains in the input boxes after the page is redirected	
-	
-//session variables which are used to keep form data in the form when the page refreshes with error data	
-$_SESSION['firstName'] = $firstName;
-$_SESSION['lastName'] = $lastName;
-$_SESSION['email'] = $email;
-$_SESSION['Username'] = $Username;
 	
 //checks the customer table to see if there is an email that matches the email in the submitted form
 $mysql = "SELECT * FROM customer WHERE CustomerEmail = '".$email."'"; 
@@ -33,8 +25,11 @@ $user = $result->fetch(); //fetches the database information
 		} elseif(preg_match("/^[\/\\.\\%\\@\\?\n]*$/", $Username)) { //checks that the username doesn't contain certain characters
 			header("location: ../member_registration.php?signup=charusername"); //redirects page with query string which displays error
 			exit();
+		} elseif(!preg_match("/^[a-zA-Z\\1-9\\.\\/\n]*$/", $pwd) || !preg_match("/^[a-zA-Z]*$/", $pwdrepeat)) { //checks that the password doesn't contain certain characters
+			header("location: ../member_registration.php?signup=charpwd"); //redirects page with query string which displays error
+			exit();
 		} elseif($pwd !== $pwdrepeat) { //checks that the password has been typed correctly into both input boxes
-	header("location: ../member_registration.php?signup=Passworddontmatch"); //redirects page with query string which displays error message
+		header("location: ../member_registration.php?signup=Passworddontmatch"); //redirects page with query string which displays error message
 		exit();
 	} elseif($email !== $user['CustomerEmail']) { //checks if the email entered matches an email in the database
 		header("location: ../Customer_registration.php?signup=norecord");

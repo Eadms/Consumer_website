@@ -1,5 +1,5 @@
 <?php 
-require "database.php";
+require 'database.inc.php';
 
 if (isset($_POST['Username'], $_POST['password'])) {
 $username = $_POST['Username']; //creates variables based on the input fields

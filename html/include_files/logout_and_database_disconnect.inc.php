@@ -1,5 +1,5 @@
 <?php 
-require 'database.php';
+require 'database.inc.php';
 
 session_start(); 
 session_destroy(); //destroys the session

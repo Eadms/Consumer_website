@@ -6,9 +6,9 @@
     <title>About us</title>
 </head>
 <header>
-    <?php include 'include_files/Navigation.inc'; 
-     include 'include_files/Banner.php';
-	include 'include_files/Welcome_message.php';
+    <?php include 'include_files/Navigation.inc.php'; 
+     include 'include_files/Banner.inc.php';
+	include 'include_files/Welcome_message.inc.php';
 	?>
 </header>
 <body>

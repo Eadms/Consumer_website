@@ -7,16 +7,16 @@
 </head>
 <body>
     <header>
-		<?php include 'include_files/Navigation.inc';
-         	  include 'include_files/Banner.php';
-			  include 'include_files/member_login_functions.php';
-			  include 'include_files/Welcome_message.php';
+		<?php include 'include_files/Navigation.inc.php';
+         	  include 'include_files/Banner.inc.php';
+			  include 'include_files/member_login_functions.inc.php';
+			  include 'include_files/Welcome_message.inc.php';
 		?>
     </header>
     <h1>Member Login</h1>
 	<p class='form-text'>Use the form below to login to the Bazaar Ceramics Members page</p>
 	<div class="form-container"> <!-- form for the member to login -->
-    	<form action="include_files/member_login_functions.php" method="post" class="login-form">
+    	<form action="include_files/member_login_functions.inc.php" method="post" class="login-form">
 			<label for="Username">Username</label>
 				<input type="text" name="Username" placeholder="Username" required>
 				<br>
