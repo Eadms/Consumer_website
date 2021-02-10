@@ -18,6 +18,8 @@
 	header("location: Member_login.php?login=notloggedin"); //redirects user if they are not logged in
 }
 			?>			
+			<a href="Cart.php">Shopping Cart</a>
+						
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
 		</header>

@@ -37,7 +37,7 @@
                 <input type='text' id='total-price' name='total-price'>
             </li>
             </ul>
-        <button type='submit' onclick='submitOrder()'>Submit</button>
+        <button type='submit' onclick='submitOrder()'>Add to Cart</button>
         <button type="button" onclick='clearBoxes()'>Clear</button>
         <button type="button" onclick="calculation()">Calculate Total</button>
     </form>
