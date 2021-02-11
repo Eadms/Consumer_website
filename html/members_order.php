@@ -19,6 +19,7 @@
                     </script>
     <form method="post">
         <p>Order Item</p>
+		<form action="include_files/shopping_cart_functions.php" method="post">
             <ul>
             <li>
                 <label for ="item">Item Description</label>

@@ -1,6 +1,6 @@
 //function to open the order page and specify the query string for each product
 function openWindow() {
-  myWindow = window.open("members_order.php?product=Red%bowl&price=40&slice=../images/slicedimages/bcpot002", "pot"); //query string for the red bowl
+  myWindow = window.open("members_order.php?product=Copper%Red%Dish&price=40&slice=../images/slicedimages/bcpot002", "pot"); //query string for the red bowl
   window.close("pot"); // code which closes any order window which is already open
 }
 function openWindow2() {

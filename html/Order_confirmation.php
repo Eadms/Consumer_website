@@ -2,9 +2,15 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Order Complete</title>
 </head>
 
 <body>
+	<?php 
+	//$_SESSION['firstname']
+	
+	
+	?>
+	<button type="button">Payment</button>
 </body>
 </html>

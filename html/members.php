@@ -18,7 +18,7 @@
 	header("location: Member_login.php?login=notloggedin"); //redirects user if they are not logged in
 }
 			?>			
-			<a href="Cart.php">Shopping Cart</a>
+			<p>amount ordered</p><a href="Cart.php">Shopping Cart</a>
 						
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
@@ -36,9 +36,9 @@
 					<img src="../images/smaller/bcpot003_smaller.jpg" alt="a tall vase with a red glaze"  style="left: 0px; top: 0px"  class='page-link' onclick="openWindow3()"></td>
 				</tr>
 				<tr>
-					<td>Red bowl - $40</td>
+					<td>Copper Red Dish - $40</td>
 					<td>White bowl - $60</td>
-					<td>Red vase - $50</td>
+					<td>Copper Red Vase - $50</td>
 				</tr>
 				<tr>
 					<td style="width: 202px">
@@ -49,8 +49,8 @@
 					<img src="../images/smaller/bcpot009_smaller.jpg" alt="a small turquoise bowl with an elevated base" height="156" style="left: 0px; top: 0px" width="242" class='page-link' onclick="openWindow6()"></td>
 				</tr>
 				<tr>
-					<td>Blue bowl - $35</td>
-					<td>Blue teacup - $30</td>
+					<td>Tungsten Blue Dish - $35</td>
+					<td>Light Blue Cup Set - $30</td>
 					<td>Turquoise bowl - $40</td>
 				</tr>
 			</table>
