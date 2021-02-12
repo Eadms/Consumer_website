@@ -1,26 +1,26 @@
 //function to open the order page and specify the query string for each product
 function openWindow() {
-  myWindow = window.open("members_order.php?product=Copper%Red%Dish&price=40&slice=../images/slicedimages/bcpot002", "pot"); //query string for the red bowl
+  myWindow = window.open("members_order.php?product=Copper%Red%Dish&price=40&productID=bcpot020&slice=../images/slicedimages/bcpot002", "pot"); //query string for the red bowl
   window.close("pot"); // code which closes any order window which is already open
 }
 function openWindow2() {
-  myWindow = window.open("members_order.php?product=White%bowl&price=60&slice=../images/slicedimages//bcpot001", "pot"); //query string for the white bowl
+  myWindow = window.open("members_order.php?product=White%bowl&price=60&productID=bcpot120&slice=../images/slicedimages//bcpot001", "pot"); //query string for the white bowl
   window.close("pot"); // code which closes any order window which is already open
 }
 function openWindow3() {
-  myWindow = window.open("members_order.php?product=Red%vase&price=50&slice=../images/slicedimages//bcpot003", "pot"); //query string for the red vase
+  myWindow = window.open("members_order.php?product=Red%vase&price=50&productID=bcpot030&slice=../images/slicedimages//bcpot003", "pot"); //query string for the red vase
   window.close("pot"); // code which closes any order window which is already open
 }
 function openWindow4() {
-  myWindow = window.open("members_order.php?product=Blue%bowl&price=35&slice=../images/slicedimages//bcpot006", "pot"); //query string for the blue bowl
+  myWindow = window.open("members_order.php?product=Tungsten%Blue%bowl&price=35&productID=bcpot090&slice=../images/slicedimages//bcpot006", "pot"); //query string for the blue bowl
   window.close("pot"); // code which closes any order window which is already open
 }
 function openWindow5() {
-  myWindow = window.open("members_order.php?product=Blue%teacup&price=30&slice=../images/slicedimages/bcpot008", "pot"); //query string for the blue teacup
+  myWindow = window.open("members_order.php?product=Blue%teacup&price=30&productID=bcpot080&slice=../images/slicedimages/bcpot008", "pot"); //query string for the blue teacup
   window.close("pot"); // code which closes any order window which is already open
 }
 function openWindow6() {
-  myWindow = window.open("members_order.php?product=Turquoise%bowl&price=40&slice=../images/slicedimages/bcpot009", "pot"); //query string for the turquoise bowl
+  myWindow = window.open("members_order.php?product=Cyan%dish&price=40&productID=bcpot060&slice=../images/slicedimages/bcpot009", "pot"); //query string for the turquoise bowl
   window.close("pot"); // code which closes any order window which is already open
 }
 
@@ -32,7 +32,7 @@ function closeWindow() {
 //pre-filling the header and form with the prduct data contained within the query strings
 window.onload = function createDetails(){
 var productDetails = window.location.search.slice(1).split("&")[0].split("=")[1]
-document.getElementById("item").value = productDetails.replace("%", " "); //pre-fills the item box
+document.getElementById("item").value = productDetails.replace("%", " ").replace("%", " "); //pre-fills the item box
 
 var productDetails = window.location.search.slice(1).split("&")[1].split("=")[1]
 document.getElementById("cost").value = productDetails; //pre-fills the cost box
@@ -41,7 +41,8 @@ document.getElementById("item").setAttribute("readonly", true); //makes the item
 document.getElementById("cost").setAttribute("readonly", true); //makes the cost box read-only
 
 var productDetails = window.location.search.slice(1).split("&")[0].split("=")[1]
-document.getElementById("header").innerHTML = productDetails.replace("%", " "); //pre-fills the page header with the product details
+document.getElementById("header").innerHTML = productDetails.replace("%", " ").replace("%", " ");
+	//pre-fills the page header with the product details
 }
 
 //form calculation function - cost and quantity

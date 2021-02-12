@@ -18,7 +18,7 @@
 	header("location: Member_login.php?login=notloggedin"); //redirects user if they are not logged in
 }
 			?>			
-			<p>amount ordered</p><a href="Cart.php">Shopping Cart</a>
+			<p>amount ordered</p><a href="Cart.php">Items in Cart</a>
 						
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
@@ -30,7 +30,7 @@
 				<tr class="member-tr">
 					<td style="width: 202px" class="member-td">
 					<img src="../images/smaller/bcpot002_smaller.jpg" alt="A deep red glazed bowl with an elevated base" class='page-link' height="165" style="left: 0px; top: 0px" width="251" onclick="openWindow()"></td>
-					<td style="width: 171px" class="member-td">
+					<td class="member-td">
 					<img src="../images/smaller/bcpot013_smaller.jpg" alt="A deep bowl with a white glaze on the outside and speckled green and brown earth tones on the inside of the bowl." height="156" style="left: 0px; top: 0px" width="243" class='page-link' onclick="openWindow2()"></td>
 					<td style="width: 174px" class="member-td">
 					<img src="../images/smaller/bcpot003_smaller.jpg" alt="a tall vase with a red glaze"  style="left: 0px; top: 0px"  class='page-link' onclick="openWindow3()"></td>
@@ -51,7 +51,7 @@
 				<tr>
 					<td>Tungsten Blue Dish - $35</td>
 					<td>Light Blue Cup Set - $30</td>
-					<td>Turquoise bowl - $40</td>
+					<td>Cyan Dish - $40</td>
 				</tr>
 			</table>
 	
