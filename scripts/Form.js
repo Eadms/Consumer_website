@@ -8,7 +8,7 @@ function openWindow2() {
   window.close("pot"); // code which closes any order window which is already open
 }
 function openWindow3() {
-  myWindow = window.open("members_order.php?product=Red%vase&price=50&productID=bcpot030&slice=../images/slicedimages//bcpot003", "pot"); //query string for the red vase
+  myWindow = window.open("members_order.php?product=Copper%Red%Vase&price=50&productID=bcpot030&slice=../images/slicedimages//bcpot003", "pot"); //query string for the red vase
   window.close("pot"); // code which closes any order window which is already open
 }
 function openWindow4() {
@@ -37,7 +37,7 @@ document.getElementById("item").value = productDetails.replace("%", " ").replace
 var productDetails = window.location.search.slice(1).split("&")[1].split("=")[1]
 document.getElementById("cost").value = productDetails; //pre-fills the cost box
 
-document.getElementById("item").setAttribute("readonly", true); //makes the item box read-only
+//document.getElementById("item").setAttribute("readonly", true); //makes the item box read-only
 document.getElementById("cost").setAttribute("readonly", true); //makes the cost box read-only
 
 var productDetails = window.location.search.slice(1).split("&")[0].split("=")[1]
@@ -62,7 +62,7 @@ function clearBoxes() { //function to clear the quantity and total price fields
   document.getElementById("quantity").value = "";
   document.getElementById("total-price").value = "";
 }
-
+/*
 //submit order confirmation pop-up box
 function submitOrder() {
   if( document.getElementById("quantity").value == "" || document.getElementById("total-price").value == "") {
@@ -74,3 +74,4 @@ function submitOrder() {
   }
 }
 }
+*/

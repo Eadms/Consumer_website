@@ -13,7 +13,7 @@
 		include 'include_files/shopping_cart_functions.php';
 		
 $queries = array();
-parse_str($_SERVER['QUERY_STRING'], $queries);	
+parse_str($_SERVER['QUERY_STRING'], $queries);
 		?>
         <header><h1 id="header" class="order-header">Product Order</h1></header>
             <table id="image-table"></table>
@@ -21,7 +21,6 @@ parse_str($_SERVER['QUERY_STRING'], $queries);
                 <script> 
                     createImageSlices(imageSlice);
                     </script>
-    <form method="post" action="include_files/shopping_cart_functions.php">
         <p>Order Item</p>
 		<form action="include_files/shopping_cart_functions.php" method="post">
             <ul>
@@ -42,7 +41,7 @@ parse_str($_SERVER['QUERY_STRING'], $queries);
                 <input type='text' id='total-price' name='total-price'>
             </li>
 			<li>
-                <input type='hidden' id='ProductID' name='ProductID' value=<?php $queries['productID'] ?>>
+                <input type='hidden' id='ProductID' name='productID' value=<?php echo $queries['productID'] ?>>
             </li>
             </ul>
         <button type='submit' onclick='submitOrder()'>Add to Cart</button>
