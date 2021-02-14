@@ -13,7 +13,8 @@ $item = $_POST['item_description'];
 $quantity = $_POST['quantity'];
 $price = $_POST['total-price'];
 $productID = $_POST['ProductID'];
-
+$orderID
+	
 $register = "INSERT into orderline(ProductID, OrderQuantity)
 VALUES ('". $_POST['ProductID'] ."','". $_POST['quantity'] ."')";
 		mysqli_query($conn, $register);
