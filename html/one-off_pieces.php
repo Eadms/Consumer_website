@@ -7,9 +7,9 @@
 </head>
 <body>
     <header>
-		<?php include 'include_files/Navigation.inc.php'; 
-         	include 'include_files/Banner.inc.php';
-		include 'include_files/Welcome_message.inc.php';
+		<?php include 'include_files/navigation.inc.php'; 
+         	include 'include_files/banner.inc.php';
+		include 'include_files/welcome_message.inc.php';
 		?>
     </header>
     <h1>One-off pieces</h1>

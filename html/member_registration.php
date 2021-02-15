@@ -8,10 +8,10 @@
 <body>
     <header>
 	<?php 
-		include 'include_files/Navigation.inc.php';
-		include 'include_files/Banner.inc.php';
+		include 'include_files/navigation.inc.php';
+		include 'include_files/banner.inc.php';
 		include 'include_files/member_registration_functions.inc.php';
-		include 'include_files/Welcome_message.inc.php';
+		include 'include_files/welcome_message.inc.php';
 			?>
      </header>
 			 <p><h1>Member Registration</h1></p>

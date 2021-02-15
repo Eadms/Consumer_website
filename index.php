@@ -7,9 +7,9 @@
 </head>
 	<body>
 		<header>
-			<?php include 'html/include_files/Navigation.inc.php';?>
-				<?php include 'html/include_files/Banner.inc.php';
-					include 'html/include_files/Welcome_message.inc.php';		
+			<?php include 'html/include_files/navigation.inc.php';?>
+				<?php include 'html/include_files/banner.inc.php';
+					include 'html/include_files/welcome_message.inc.php';		
 			?>
 		</header>
 		<h2 class="homepage-header">Welcome to Bazaar Ceramics</h2>

@@ -7,9 +7,9 @@
         <title>Product Order Form</title> 
     </head>
     <body>
-       <?php include 'include_files/Navigation.inc.php'; 
-             include 'include_files/Banner.inc.php';
-		include 'include_files/Welcome_message.inc.php';
+       <?php include 'include_files/navigation.inc.php'; 
+             include 'include_files/banner.inc.php';
+		include 'include_files/welcome_message.inc.php';
 		include 'include_files/shopping_cart_functions.php';
 		
 $queries = array();
