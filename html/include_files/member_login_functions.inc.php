@@ -16,6 +16,7 @@ $sql = "SELECT * FROM members WHERE UserID = '".$username."'"; //selects  user r
 		session_start(); //starts the session 
 		$_SESSION['Member'] = $row['UserID']; //creates session variables that correspond to the username and first name
 		$_SESSION['first_name'] = $row['first_name'];
+		$_SESSION['customerID'] = $row['CustomerID'];
 		exit();
 	} else {
 		header("location:../Member_login.php?login=error"); //if the username/pwd doesn't match a record, an error will display based on the query string

@@ -41,7 +41,10 @@ parse_str($_SERVER['QUERY_STRING'], $queries);
                 <input type='text' id='total-price' name='total-price'>
             </li>
 			<li>
-                <input type='hidden' id='ProductID' name='productID' value=<?php echo $queries['productID'] ?>>
+                <input type='hidden' id='productID' name='productID' value=<?php echo $queries['productID'] ?>>
+            </li>
+			<li>
+                <input type='hidden' id='date' name='date' value=<?php echo date("d-m-y")?>>
             </li>
             </ul>
         <button type='submit' onclick='submitOrder()'>Add to Cart</button>
