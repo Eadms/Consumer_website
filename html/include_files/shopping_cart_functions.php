@@ -7,17 +7,20 @@ $serverName = "localhost";
 	$dbname = "bazaarceramics_db";
 	$conn = mysqli_connect($serverName, $dbusername, $dbpassword, $dbname);
 
-if (isset($_POST['quantity'], $_POST['total-price'], $_POST['productID'])) {
+isset($_SESSION['CustomerID']);
+
+if (isset($_POST['quantity'], $_POST['total-price'], $_POST['productID'], $_POST['date'])) {
 //creates variables based on the inputs into the input boxes
-$quantity = $_POST['quantity'];
-$price = $_POST['total-price'];
+//$quantity = $_POST['quantity'];
+//$price = $_POST['total-price'];
 $productID = $_POST['productID'];
 $date = $_POST['date'];
-	
-$register = "INSERT into orders(CustomerID, OrderDate)
-VALUES ('". $customerID ."', '". $customerID ."')";
-		mysqli_query($conn, $register);
+$CustomerID = $_SESSION['CustomerID'];
+
+$submitOrder = "INSERT into orders(CustomerID, OrderDate) VALUES ('". $_SESSION['CustomerID'] ."', '". $_POST['date'] ."')";
+		mysqli_query($conn, $submitOrder);
 		header('location: ../Members.php?order=success'); //redirects the user to the login page if registration is successful 		
+		exit();
 }
 	/*	
 $productCheck = "SELECT * FROM product where ProductID = '".$productID."'";	
