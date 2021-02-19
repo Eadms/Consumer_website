@@ -15,10 +15,11 @@
 			include 'include_files/welcome_message.inc.php';
 
 	if(!isset($_SESSION['Member'])) {
-	header("location: Member_login.php?login=notloggedin"); //redirects user if they are not logged in
-}
-			?>			
-			<p>amount ordered</p><a href="cart.php">Items in Cart</a>
+	header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
+
+			
+			?>		
+			<p>amount ordered:</p><a href="cart.php">Items in Cart</a>
 						
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->

@@ -21,13 +21,14 @@ $result = $pdo->prepare($mysql);
 $result->execute();
 $user = $result->fetch(); //fetches the database information	
 	
+//mysqli_insert_id
+	
 $submitOrder = "INSERT into orders(CustomerID, OrderDate) VALUES ('". $_POST['CustomerID'] ."', '". $_POST['date'] ."')";
-//$submitOrdertwo = "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $user['OrderID']."', '". $_POST['productID']."', '". $_POST['quantity']."' )";	
-	mysqli_multi_query($conn, $submitOrder);
+$submitOrdertwo = "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $user['OrderID']."', '". $_POST['productID']."', '". $_POST['quantity']."' )";	
+	mysqli_query($conn, $submitOrder);
+	$submitOrdertwo = "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $user['OrderID']."', '". $_POST['productID']."', '". $_POST['quantity']."' )";	
+	mysqli_query($conn, $submitOrdertwo);
 	header('location: ../Members.php?order=success'); //redirects the user to the login page if registration is successful 		
-	
-	
-	
 	exit();
 }
 	/*	
