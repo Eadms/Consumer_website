@@ -14,6 +14,7 @@
 		
 $queries = array();
 parse_str($_SERVER['QUERY_STRING'], $queries);
+		
 		?>
         <header><h1 id="header" class="order-header">Product Order</h1></header>
             <table id="image-table"></table>
@@ -44,7 +45,10 @@ parse_str($_SERVER['QUERY_STRING'], $queries);
                 <input type='hidden' id='productID' name='productID' value=<?php echo $queries['productID'] ?>>
             </li>
 			<li>
-                <input type='hidden' id='date' name='date' value=<?php echo date("d-m-y")?>>
+                <input type='hidden' id='date' name='date' value=<?php echo date("y-m-d")?>>
+            </li>
+				<li>
+                <input type='hidden' id='CustomerID' name='CustomerID' value=<?php if (isset($_SESSION['Member'])) {echo $_SESSION['customerID'];} ?>>
             </li>
             </ul>
         <button type='submit' onclick='submitOrder()'>Add to Cart</button>
