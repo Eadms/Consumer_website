@@ -11,18 +11,28 @@ $serverName = "localhost";
 if (isset($_POST['quantity'], $_POST['total-price'], $_POST['productID'], $_POST['date'], $_POST['CustomerID'])) {
 //creates variables based on the inputs into the input boxes
 $quantity = $_POST['quantity'];
-//$price = $_POST['total-price'];
+$price = $_POST['total-price'];
 $productID = $_POST['productID'];
 $date = $_POST['date'];
 $CustomerID = $_POST['CustomerID'];
 	
-$mysql = "SELECT * FROM orders WHERE CustomerID = '".$CustomerID."'"; 
-$result = $pdo->prepare($mysql);
-$result->execute();
-$user = $result->fetch(); //fetches the database information	
-	
 //mysqli_insert_id
-	
+$productCheck = "SELECT * FROM product where ProductID = '".$productID."'";	
+$result = $pdo->prepare($productCheck);
+$result->execute();
+$dbproduct = $result->fetch(); //fetches the database information	
+
+
+if($productID != $dbproduct['ProductID']) {
+	header("location: ../members.php?Error=ProductID");
+	exit();
+} elseif ($quantity <= 0) {
+	echo "<script type='text/javascript'>alert('Please enter a quantity of at least 1');</script>";
+	header("location: ../members.php");
+	exit();
+} elseif (!preg_match("/^[1-9]*$/", $quantity)) {
+	header("location: ../members_order.php?order=numerals");
+} else {
 $submitOrder = "INSERT into orders(CustomerID, OrderDate) VALUES ('". $_POST['CustomerID'] ."', '". $_POST['date'] ."')";
 $submitOrdertwo = "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $user['OrderID']."', '". $_POST['productID']."', '". $_POST['quantity']."' )";	
 	mysqli_query($conn, $submitOrder);
@@ -31,20 +41,4 @@ $submitOrdertwo = "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VAL
 	header('location: ../Members.php?order=success'); //redirects the user to the login page if registration is successful 		
 	exit();
 }
-	/*	
-$productCheck = "SELECT * FROM product where ProductID = '".$productID."'";	
-$result = $conn->query($productCheck);
-
-if($productID != $result) {
-	header("location: ../members_order.php?order=item");
-	exit();
-} else
-
-	if ($quantity <= 0) {
-	header("location: ../members_order.php?order=zero");
-	exit();
-} elseif (!preg_match("/^[1-9]*$/", $quantity)) {
-	header("location: ../members_order.php?order=numerals");
-} 
 }
-*/

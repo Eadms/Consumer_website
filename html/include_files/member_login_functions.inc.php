@@ -4,7 +4,6 @@ require 'database.inc.php';
 if (isset($_POST['Username'], $_POST['password'])) {
 $username = $_POST['Username']; //creates variables based on the input fields
 $pwd = $_POST['password'];
-
 	
 $sql = "SELECT * FROM members WHERE UserID = '".$username."'"; //selects  user record with the same username as in the input box
 	$result = mysqli_query($conn, $sql);

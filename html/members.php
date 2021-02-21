@@ -55,6 +55,17 @@
 					<td>Cyan Dish - $40</td>
 				</tr>
 			</table>
-	
+	<?php 
+		if(!isset($_GET['Error'])) { //checks if the query string key exists
+			exit();
+		} else {
+			$errorCheck = $_GET['Error'];
+			
+			if($errorCheck == "ProductID") {
+				echo "<script language='Javascript'>alert('The product ID does not exist.');</script>";//displays a message if the user has registered as a customer
+				exit();
+			}
+		}
+		?>
 	</body>
 </html>
