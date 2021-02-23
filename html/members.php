@@ -62,9 +62,15 @@
 			$errorCheck = $_GET['Error'];
 			
 			if($errorCheck == "ProductID") {
-				echo "<script language='Javascript'>alert('The product ID does not exist.');</script>";//displays a message if the user has registered as a customer
+				echo "<script language='Javascript'>alert('The product ID does not exist. Please select one of the available products.');</script>";
 				exit();
-			}
+			} elseif($errorCheck == "zero") {
+				echo "<script language='Javascript'>alert('You must select a product quantity of at least one.');</script>";
+				exit();
+			} elseif($errorCheck == "numerals") {
+				echo "<script language='Javascript'>alert('You can only input numberals into the quantity box.');</script>";
+				exit();
+		}
 		}
 		?>
 	</body>

@@ -28,10 +28,10 @@ if($productID != $dbproduct['ProductID']) {
 	exit();
 } elseif ($quantity <= 0) {
 	echo "<script type='text/javascript'>alert('Please enter a quantity of at least 1');</script>";
-	header("location: ../members.php");
+	header("location: ../members.php?Error=zero");
 	exit();
 } elseif (!preg_match("/^[1-9]*$/", $quantity)) {
-	header("location: ../members_order.php?order=numerals");
+	header("location: ../members_order.php?Error=numerals");
 } else {
 $submitOrder = "INSERT into orders(CustomerID, OrderDate) VALUES ('". $_POST['CustomerID'] ."', '". $_POST['date'] ."')";
 $submitOrdertwo = "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $user['OrderID']."', '". $_POST['productID']."', '". $_POST['quantity']."' )";	
