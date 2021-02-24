@@ -9,18 +9,14 @@
     <body>
        <?php include 'include_files/navigation.inc.php'; 
              include 'include_files/banner.inc.php';
-		include 'include_files/welcome_message.inc.php';
-		include 'include_files/shopping_cart_functions.php';
-		require 'include_files/database.inc.php';
+			include 'include_files/welcome_message.inc.php';
+			include 'include_files/shopping_cart_functions.php';
+			require 'include_files/database.inc.php';
 		
 			if(!isset($_SESSION['Member'])) {
 	header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
-
-		
 $queries = array();
-parse_str($_SERVER['QUERY_STRING'], $queries);
-		$sql="SELECT OrderQuantity FROM orderline WHERE OrderID = "
-		?>
+parse_str($_SERVER['QUERY_STRING'], $queries);	?>
         <header><h1 id="header" class="order-header">Product Order</h1></header>
             <table id="image-table"></table>
                 <script src="../scripts/ImageTable.js"></script>
