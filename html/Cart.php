@@ -11,7 +11,10 @@
 	include 'include_files/member_login_functions.inc.php';
 	require 'include_files/database.inc.php';
 	include 'include_files/welcome_message.inc.php'; 
-
+?>
+	<body><h1>Your Cart</h1>
+	
+	<?php
 if(!isset($_SESSION['Member'])) {
 header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
 	
@@ -21,27 +24,28 @@ $todaysDate = date("Y-m-d");
 	
 //$checkDatabase = "SELECT * FROM orders WHERE OrderID IN ('".$todaysDate."', '".$CustomerID."')";	
 	
-$checkDatabase = "SELECT * FROM orders WHERE OrderDate = '". $todaysDate ."'";
-	
+$checkDatabase = "SELECT * FROM orders WHERE CustomerID = '". $CustomerID ."'";
 $result = mysqli_query($conn, $checkDatabase);
 $resultCheck = mysqli_num_rows($result);
-$row = mysqli_fetch_assoc($result);	
+$row = mysqli_fetch_assoc($result);
 	
-	echo $row['OrderID'];
+$checkDatabases2 = "SELECT * FROM orderline WHERE OrderID = '". $row['OrderID'] ."'";
+$results = mysqli_query($conn, $checkDatabases2);
+$resultChecks = mysqli_num_rows($results);
+$rows = mysqli_fetch_assoc($results);
+	
+$checkDatabases3 = "SELECT * FROM product WHERE ProductID = '". $rows['ProductID'] ."'";
+$results3 = mysqli_query($conn, $checkDatabases3);
+$resultChecks3 = mysqli_num_rows($results3);
+$rows3 = mysqli_fetch_assoc($results3);	
+	
+	
+while ($rows = mysqli_fetch_assoc($results))	{
+	echo "Product ID: ", $rows['ProductID'], "<br>", "Product Quantity: ", $rows['OrderQuantity'], "<br>", "Product Description: ", $rows3['ProductDescription'], "<br>", "Product Price: ", $rows3['ProductPrice'], "<br>", "Total line price: ", "<br>", "<button type='button'>Delete item</button>", "<hr>";	
+}
 
 	?>
-<body><h1>Your Cart</h1>
 	<form>
-		<label for="product_code">Product Code</label>
-		<input type="text" name="product_code"></input>
-		<label for="description">Description</label>
-	<input type="text" name="description"></input>
-	<label for="quantity">Quantity</label>	
-	<input type="text" name="quantity"></input>
-<label for="price">Unit Price</label>		
-<input type="text" name="price"></input>
-		<label for="total_price">Total Price</label>		
-<input type="text" name="total_price"></input>
 <button type="button">Close Cart</button>
 <button type="button">Delete Cart</button>
 <button tye="button">Confirm Order</button>
