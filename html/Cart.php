@@ -29,10 +29,12 @@ $todaysDate = date("Y-m-d");
 	
 //$checkDatabase = "SELECT * FROM orders WHERE OrderID IN ('".$todaysDate."', '".$CustomerID."')";	
 	
-$join = "SELECT OrderID FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID";
+$join = "SELECT orders.OrderID, orders.CustomerID FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID INNER JOIN product ON orderline.ProductID = product.ProductID;";
+		
+		
 		
 mysqli_query($conn, $join);
-	$resultChecks33 = mysqli_num_rows($join);
+$resultChecks33 = mysqli_num_rows($join);
 $rows33 = mysqli_fetch_assoc($resultChecks33);	
 		
 		
