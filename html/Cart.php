@@ -5,6 +5,11 @@
 <title>Your shopping cart</title>
 <link rel="stylesheet"  type='text/css' href="../styles/customer_registration.css">
 </head>
+	<style>
+		p {
+			font-family: arial, helvetica, sans-serif;
+		}
+	</style>
 	<?php 
 	include 'include_files/navigation.inc.php';
 	include 'include_files/banner.inc.php';
@@ -24,6 +29,21 @@ $todaysDate = date("Y-m-d");
 	
 //$checkDatabase = "SELECT * FROM orders WHERE OrderID IN ('".$todaysDate."', '".$CustomerID."')";	
 	
+$join = "SELECT OrderID FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID";
+		
+mysqli_query($conn, $join);
+	$resultChecks33 = mysqli_num_rows($join);
+$rows33 = mysqli_fetch_assoc($resultChecks33);	
+		
+		
+		while($row33 = mysqli_fetch_assoc($join)) {
+        echo $row33['OrderID'];
+        echo "<br>";
+    }
+	
+	//"SELECT orders.OrderID FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID INNER JOIN ";
+	
+		
 $checkDatabase = "SELECT * FROM orders WHERE CustomerID = '". $CustomerID ."'";
 $result = mysqli_query($conn, $checkDatabase);
 $resultCheck = mysqli_num_rows($result);
@@ -39,13 +59,12 @@ $results3 = mysqli_query($conn, $checkDatabases3);
 $resultChecks3 = mysqli_num_rows($results3);
 $rows3 = mysqli_fetch_assoc($results3);	
 	
-	
 while ($rows = mysqli_fetch_assoc($results))	{
-	echo "Product ID: ", $rows['ProductID'], "<br>", "Product Quantity: ", $rows['OrderQuantity'], "<br>", "Product Description: ", $rows3['ProductDescription'], "<br>", "Product Price: ", $rows3['ProductPrice'], "<br>", "Total line price: ", "<br>", "<button type='button'>Delete item</button>", "<hr>";	
+	echo "<p><b>Product ID: </b>", $rows['ProductID'], "<br>", "<b>Product Quantity: </b>", $rows['OrderQuantity'], "<br>", "<b>Product Description: </b>", $rows3['ProductDescription'], "<br>", "<b>Product Price: </b>$", $rows3['ProductPrice'], "<br>", "<b>Total line price: </b>", "$", $calc = $rows['OrderQuantity'] * $rows3['ProductPrice'] , "<br>", "<button type='button'>Delete item</button>", "<hr></p>";
 }
-
+			echo "<p>Total cost: ", "$",$calc, "</p>";
 	?>
-	<form>
+<form>
 <button type="button">Close Cart</button>
 <button type="button">Delete Cart</button>
 <button tye="button">Confirm Order</button>
