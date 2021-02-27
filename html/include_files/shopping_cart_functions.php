@@ -22,7 +22,6 @@ $result = $pdo->prepare($productCheck);
 $result->execute();
 $dbproduct = $result->fetch(); //fetches the database information	
 
-
 if($productID != $dbproduct['ProductID']) {
 	header("location: ../members.php?Error=ProductID");
 	exit();
@@ -33,12 +32,10 @@ if($productID != $dbproduct['ProductID']) {
 } elseif (!preg_match("/^[1-9]*$/", $quantity)) {
 	header("location: ../members_order.php?Error=numerals");
 } else {
-$submitOrder = "INSERT into orders(CustomerID, OrderDate) VALUES ('". $_POST['CustomerID'] ."', '". $_POST['date'] ."')";
-$submitOrdertwo = "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $user['OrderID']."', '". $_POST['productID']."', '". $_POST['quantity']."' )";	
-	mysqli_query($conn, $submitOrder);
-	$submitOrdertwo = "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $user['OrderID']."', '". $_POST['productID']."', '". $_POST['quantity']."' )";	
-	mysqli_query($conn, $submitOrdertwo);
-	header('location: ../Members.php?order=success'); //redirects the user to the login page if registration is successful 		
-	exit();
+mysqli_query($conn, "INSERT into orders(CustomerID, OrderDate) VALUES ('". $_POST['CustomerID'] ."', '". $_POST['date'] ."')");
+$orderID = mysqli_insert_id($conn);
+mysqli_query($conn, "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $orderID."', '". $_POST['productID']."', '". $_POST['quantity']."' )");
+header('location: ../Members.php?order=success'); //redirects the user to the login page if registration is successful 		
+exit();
 }
 }

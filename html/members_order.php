@@ -47,7 +47,7 @@ parse_str($_SERVER['QUERY_STRING'], $queries);	?>
                 <input type='text' id='productID' name='productID' value=<?php echo $queries['productID'] ?>>
             </li>
 			<li>
-                <input type='hidden' id='date' name='date' value=<?php echo date("y-m-d")?>>
+                <input type='hidden' id='date' name='date' value=<?php echo date("Y-m-d")?>>
             </li>
 				<li>
                 <input type='hidden' id='CustomerID' name='CustomerID' value=<?php if (isset($_SESSION['Member'])) {echo $_SESSION['customerID'];} ?>>

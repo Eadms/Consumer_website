@@ -25,46 +25,33 @@ header("location: Member_login.php?login=notloggedin");} //redirects user if the
 	
 $CustomerID = $_SESSION['customerID'];		
 $todaysDate = date("Y-m-d");
-//where CustomerID = '".$CustomerID."' AND 
-	
-//$checkDatabase = "SELECT * FROM orders WHERE OrderID IN ('".$todaysDate."', '".$CustomerID."')";	
-	
-$join = "SELECT orders.OrderID, orders.CustomerID FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID INNER JOIN product ON orderline.ProductID = product.ProductID;";
+		$ordern = 100;
 		
-		
-		
-mysqli_query($conn, $join);
-$resultChecks33 = mysqli_num_rows($join);
-$rows33 = mysqli_fetch_assoc($resultChecks33);	
-		
-		
-		while($row33 = mysqli_fetch_assoc($join)) {
-        echo $row33['OrderID'];
-        echo "<br>";
-    }
-	
-	//"SELECT orders.OrderID FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID INNER JOIN ";
-	
-		
-$checkDatabase = "SELECT * FROM orders WHERE CustomerID = '". $CustomerID ."'";
+
+//joins the orders, orderline and product tables
+
+$checkDatabase = "SELECT * FROM orders WHERE CustomerID = '". $CustomerID ."' AND OrderDate = '".$todaysDate."'";
 $result = mysqli_query($conn, $checkDatabase);
 $resultCheck = mysqli_num_rows($result);
-$row = mysqli_fetch_assoc($result);
+$row = mysqli_fetch_assoc($result);		
+		
+if($CustomerID == isset($row['CustomerID']) && $todaysDate == isset($row['OrderDate']))  {		
+		
+$join = "SELECT orders.OrderID, orders.CustomerID, orders.OrderDate, orderline.ProductID, orderline.OrderQuantity, product.ProductDescription, product.ProductPrice FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID INNER JOIN product ON orderline.ProductID = product.ProductID WHERE CustomerID = '". $CustomerID ."' AND OrderDate = '". $todaysDate ."'";
+
+$joinresult = mysqli_query($conn, $join);
+$joincheck = mysqli_num_rows($joinresult);
+
+	while ($joinz = mysqli_fetch_assoc($joinresult))	{
+	echo "<p><b>Product ID: </b>", $joinz['ProductID'], "<br>", "<b>Product Quantity: </b>", $joinz['OrderQuantity'], "<br>", "<b>Product Description: </b>", $joinz['ProductDescription'], "<br>", "<b>Product Price: </b>$", $joinz['ProductPrice'], "<br>", "<b>Total line price: </b>", "$", $calc = $joinz['OrderQuantity'] * $joinz['ProductPrice'] , "<br>", "<button type='button'>Delete item</button>", "<hr></p>";
+	}
+	echo "<p>Total cost: ", "$",$calc, "</p>";
 	
-$checkDatabases2 = "SELECT * FROM orderline WHERE OrderID = '". $row['OrderID'] ."'";
-$results = mysqli_query($conn, $checkDatabases2);
-$resultChecks = mysqli_num_rows($results);
-$rows = mysqli_fetch_assoc($results);
-	
-$checkDatabases3 = "SELECT * FROM product WHERE ProductID = '". $rows['ProductID'] ."'";
-$results3 = mysqli_query($conn, $checkDatabases3);
-$resultChecks3 = mysqli_num_rows($results3);
-$rows3 = mysqli_fetch_assoc($results3);	
-	
-while ($rows = mysqli_fetch_assoc($results))	{
-	echo "<p><b>Product ID: </b>", $rows['ProductID'], "<br>", "<b>Product Quantity: </b>", $rows['OrderQuantity'], "<br>", "<b>Product Description: </b>", $rows3['ProductDescription'], "<br>", "<b>Product Price: </b>$", $rows3['ProductPrice'], "<br>", "<b>Total line price: </b>", "$", $calc = $rows['OrderQuantity'] * $rows3['ProductPrice'] , "<br>", "<button type='button'>Delete item</button>", "<hr></p>";
+} else {
+	echo "<p>Your cart is empty</p>";
 }
-			echo "<p>Total cost: ", "$",$calc, "</p>";
+	
+		
 	?>
 <form>
 <button type="button">Close Cart</button>
