@@ -51,7 +51,9 @@ $joincheck = mysqli_num_rows($joinresult);
 }		
 	?>
 <form>
-<button type="button">Close Cart</button>
+	<script>function closeCart() {
+  myWindow = window.open("members_page.php");</script>
+<button type="button" onclick="closeCart()">Close Cart</button>
 <button type="button">Delete Cart</button>
 <button tye="button">Confirm Order</button>
 	</form>

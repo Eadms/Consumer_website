@@ -27,11 +27,11 @@ if ($result = mysqli_query($conn, $sql))
   {
   // Return the number of rows in result set
   $rowcount=mysqli_num_rows($result);
-  echo $rowcount;
+  echo $rowcount, " ";
   // Free result set
   mysqli_free_result($result);
 }
-				?></p><a href="cart.php">Items in Cart</a>
+				?><a href="cart.php" target="_blank">Items in Cart</a>
 						
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
