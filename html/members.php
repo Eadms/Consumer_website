@@ -13,16 +13,24 @@
 			include 'include_files/banner.inc.php';
 			include 'include_files/member_login_functions.inc.php';
 			include 'include_files/welcome_message.inc.php';
-
+			require 'include_files/database.inc.php';
 	if(!isset($_SESSION['Member'])) {
 	header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
 
-			
 			?>		
 			<p>amount ordered: <?php 
 				
-				
-				
+				$CustomerID = $_SESSION['customerID'];		
+$todaysDate = date("Y-m-d");
+$sql = "SELECT * FROM orders WHERE CustomerID = '". $CustomerID ."' AND OrderDate = '".$todaysDate."'";
+if ($result = mysqli_query($conn, $sql))
+  {
+  // Return the number of rows in result set
+  $rowcount=mysqli_num_rows($result);
+  echo $rowcount;
+  // Free result set
+  mysqli_free_result($result);
+}
 				?></p><a href="cart.php">Items in Cart</a>
 						
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->

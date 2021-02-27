@@ -25,9 +25,7 @@ header("location: Member_login.php?login=notloggedin");} //redirects user if the
 	
 $CustomerID = $_SESSION['customerID'];		
 $todaysDate = date("Y-m-d");
-		$ordern = 100;
 		
-
 //joins the orders, orderline and product tables
 
 $checkDatabase = "SELECT * FROM orders WHERE CustomerID = '". $CustomerID ."' AND OrderDate = '".$todaysDate."'";
@@ -44,14 +42,13 @@ $joincheck = mysqli_num_rows($joinresult);
 
 	while ($joinz = mysqli_fetch_assoc($joinresult))	{
 	echo "<p><b>Product ID: </b>", $joinz['ProductID'], "<br>", "<b>Product Quantity: </b>", $joinz['OrderQuantity'], "<br>", "<b>Product Description: </b>", $joinz['ProductDescription'], "<br>", "<b>Product Price: </b>$", $joinz['ProductPrice'], "<br>", "<b>Total line price: </b>", "$", $calc = $joinz['OrderQuantity'] * $joinz['ProductPrice'] , "<br>", "<button type='button'>Delete item</button>", "<hr></p>";
+		$items[] = $calc;
 	}
-	echo "<p>Total cost: ", "$",$calc, "</p>";
+	echo "<p>Total cost: ", "$",array_sum($items) , "</p>";
 	
 } else {
 	echo "<p>Your cart is empty</p>";
-}
-	
-		
+}		
 	?>
 <form>
 <button type="button">Close Cart</button>
