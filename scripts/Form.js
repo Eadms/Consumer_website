@@ -24,7 +24,15 @@ function openWindow6() {
   window.close("pot"); // code which closes any order window which is already open
 }
 
-//function to close the order page
+function openCart() {
+	myWindow = window.open("cart.php")
+}
+
+function openConfirmpage() {
+	myWindow = window.open("Order_confirmation.php");
+}
+
+//function to close the order and cart pages
 function closeWindow() {
   window.close();
 }

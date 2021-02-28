@@ -31,7 +31,7 @@ if ($result = mysqli_query($conn, $sql))
   // Free result set
   mysqli_free_result($result);
 }
-				?><a href="cart.php" target="_blank">Items in Cart</a>
+				?><a href="cart.php" target="_blank" onclick="openCart()">Items in Cart</a>
 						
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Your shopping cart</title>
 <link rel="stylesheet"  type='text/css' href="../styles/customer_registration.css">
+	<script src="../scripts/Form.js"></script>
 </head>
 	<style>
 		p {
@@ -51,11 +52,9 @@ $joincheck = mysqli_num_rows($joinresult);
 }		
 	?>
 <form>
-	<script>function closeCart() {
-  myWindow = window.open("members_page.php");</script>
-<button type="button" onclick="closeCart()">Close Cart</button>
+<button type="button" onclick="closeWindow()">Close Cart</button>
 <button type="button">Delete Cart</button>
-<button tye="button">Confirm Order</button>
+<button tye="button" onclick="openConfirmpage()">Confirm Order</button>
 	</form>
 </body>
 </html>
