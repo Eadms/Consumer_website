@@ -40,8 +40,8 @@ $join = "SELECT orders.OrderID, orders.CustomerID, orders.OrderDate, orderline.P
 $joinresult = mysqli_query($conn, $join);
 $joincheck = mysqli_num_rows($joinresult);
 
-	while ($joinz = mysqli_fetch_assoc($joinresult))	{
-	echo "<p><b>Product ID: </b>", $joinz['ProductID'], "<br>", "<b>Product Quantity: </b>", $joinz['OrderQuantity'], "<br>", "<b>Product Description: </b>", $joinz['ProductDescription'], "<br>", "<b>Product Price: </b>$", $joinz['ProductPrice'], "<br>", "<b>Total line price: </b>", "$", $calc = $joinz['OrderQuantity'] * $joinz['ProductPrice'] , "<br>", "<button type='button'>Delete item</button>", "<hr></p>";
+	while ($joinloop = mysqli_fetch_assoc($joinresult))	{
+	echo "<p><b>Product ID: </b>", $joinloop['ProductID'], "<br>", "<b>Product Quantity: </b>", $joinloop['OrderQuantity'], "<br>", "<b>Product Description: </b>", $joinloop['ProductDescription'], "<br>", "<b>Product Price: </b>$", $joinloop['ProductPrice'], "<br>", "<b>Total line price: </b>", "$", $calc = $joinloop['OrderQuantity'] * $joinloop['ProductPrice'] , "<br>", "<button type='button'>Delete item</button>", "<hr></p>";
 		$items[] = $calc;
 	}
 	echo "<p>Total cost: ", "$",array_sum($items) , "</p>";
