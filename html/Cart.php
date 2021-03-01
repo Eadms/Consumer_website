@@ -42,7 +42,7 @@ $joinresult = mysqli_query($conn, $join);
 $joincheck = mysqli_num_rows($joinresult);
 
 	while ($joinloop = mysqli_fetch_assoc($joinresult))	{
-	echo "<p><b>Product ID: </b>", $joinloop['ProductID'], "<br>", "<b>Product Quantity: </b>", $joinloop['OrderQuantity'], "<br>", "<b>Product Description: </b>", $joinloop['ProductDescription'], "<br>", "<b>Product Price: </b>$", $joinloop['ProductPrice'], "<br>", "<b>Total line price: </b>", "$", $calc = $joinloop['OrderQuantity'] * $joinloop['ProductPrice'] , "<br>", "<button type='button'>Delete item</button>", "<hr></p>";
+	echo "<p><b>Product ID: </b>", $joinloop['ProductID'], "<br>", "<b>Product Quantity: </b>", $joinloop['OrderQuantity'], "<br>", "<b>Product Description: </b>", $joinloop['ProductDescription'], "<br>", "<b>Product Price: </b>$", $joinloop['ProductPrice'], "<br>", "<b>Total line price: </b>", "$", $calc = $joinloop['OrderQuantity'] * $joinloop['ProductPrice'] , "<br>", "<form action='include_files/delete_function.php' method='post'><input type='hidden' name='productID' value= '". $joinloop['ProductID'] ."'></input><input type='hidden' name='quantity' value= '". $joinloop['OrderQuantity'] ."'></input><input type='hidden' name='price' value= '". $joinloop['ProductPrice'] ."'></input><input type='hidden' name='productID' value= '". $joinloop['ProductID'] ."'></input><input type='hidden' name='orderID' value= '". $joinloop['OrderID'] ."'></input><button type='submit'>Delete item</button></form>", "<hr></p>";
 		$items[] = $calc;
 	}
 	echo "<p>Total cost: ", "$",array_sum($items) , "</p>";

@@ -30,7 +30,7 @@ if($productID != $dbproduct['ProductID']) {
 	header("location: ../members.php?Error=zero");
 	exit();
 } elseif (!preg_match("/^[1-9]*$/", $quantity)) {
-	header("location: ../members_order.php?Error=numerals");
+	header("location: ../members.php?Error=numerals");
 } else {
 mysqli_query($conn, "INSERT into orders(CustomerID, OrderDate) VALUES ('". $_POST['CustomerID'] ."', '". $_POST['date'] ."')");
 $orderID = mysqli_insert_id($conn);
