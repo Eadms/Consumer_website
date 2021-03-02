@@ -12,7 +12,14 @@
 			include 'include_files/welcome_message.inc.php';
 			include 'include_files/shopping_cart_functions.php';
 			require 'include_files/database.inc.php';
-		
+	
+$todaysDate = date("Y-m-d");
+
+$productCheck = "SELECT * FROM orders where CustomerID = '".$_SESSION['customerID']."' AND OrderDate = '".$todaysDate."'";	
+$result = $pdo->prepare($productCheck);
+$result->execute();
+$dbproduct = $result->fetch();
+	
 			if(!isset($_SESSION['Member'])) {
 	header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
 $queries = array();
@@ -47,11 +54,12 @@ parse_str($_SERVER['QUERY_STRING'], $queries);	?>
                 <input type='text' id='productID' name='productID' value=<?php echo $queries['productID'] ?>>
             </li>
 			<li>
-                <input type='hidden' id='date' name='date' value=<?php echo date("Y-m-d")?>>
+                <input type='text' id='date' name='date' value=<?php echo date("Y-m-d")?>>
             </li>
 				<li>
-                <input type='hidden' id='CustomerID' name='CustomerID' value=<?php if (isset($_SESSION['Member'])) {echo $_SESSION['customerID'];} ?>>
+                <input type='text' id='CustomerID' name='CustomerID' value=<?php if (isset($_SESSION['Member'])) {echo $_SESSION['customerID'];} ?>>
             </li>
+				<input type='text' id='OrderID' name='OrderID' value=<?php if(isset($dbproduct['OrderDate'])) { echo $dbproduct['OrderID'];} else {echo "";} ?>>
             </ul>
         <button type='submit' onclick='submitOrder()'>Add to Cart</button>
         <button type="button" onclick='clearBoxes()'>Clear</button>

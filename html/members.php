@@ -77,7 +77,7 @@ if ($result = mysqli_query($conn, $sql))
 				echo "<script language='Javascript'>alert('The product ID does not exist. Please select one of the available products.');</script>";
 				exit();
 			} elseif($errorCheck == "zero") {
-				echo "<script language='Javascript'>alert('You must select a product quantity of at least one.');</script>";
+				echo "<script language='Javascript'>alert('Please select a product quantity of at least one.');</script>";
 				exit();
 			} elseif($errorCheck == "numerals") {
 				echo "<script language='Javascript'>alert('You can only input numberals into the quantity box.');</script>";
