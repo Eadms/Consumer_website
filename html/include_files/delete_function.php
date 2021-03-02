@@ -1,14 +1,27 @@
 <?php 
 
-require 'database.inc.php';
-include 'member_login_functions.inc.php';
+$serverName = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "bazaarceramics_db";
+$conn = mysqli_connect($serverName, $dbusername, $dbpassword, $dbname);
 
+if(isset($_POST['price'], $_POST['quantity'],$_POST['ProductID'] ));
 
-if (isset($POST_['productID']) && isset($POST_['quantity']) && isset($POST_['price'])) {
-	$delete = "DELETE FROM orderline WHERE OrderID = '".$POST_['OrderID']."' AND WHERE OrderQuantity = '".$POST_['productID']."'";
+echo $_POST['price'], $_POST['quantity'];
+/*
+if(isset($POST_['productID'], $POST_['quantity'], $POST_['OrderID'])) {
 	
-$result = mysqli_query($conn, $delete);
-header("location: ../cart.php");
+	$productID = $POST_['productID']; 
+	$quantity = $POST_['quantity']; 
+	$orderID = $POST_['OrderID'];
+	
+	echo "hi ", $productID, $quantity, $orderID;
+	
+	//$delete = "DELETE FROM orderline WHERE OrderID = '".$orderID."' AND OrderQuantity = '".$quantity."'";
+	
+//mysqli_query($conn, $delete);
+//header('location: ../cart.php');
 
 }
-
+*/
