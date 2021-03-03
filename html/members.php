@@ -20,13 +20,14 @@
 			?>		
 			<p>amount ordered: <?php 
 				
-				$CustomerID = $_SESSION['customerID'];		
-$todaysDate = date("Y-m-d");
-$sql = "SELECT * FROM orders WHERE CustomerID = '". $CustomerID ."' AND OrderDate = '".$todaysDate."'";
+$CustomerID = $_SESSION['customerID'];		
+$todaysDate = date("Y-m-d");	
+				
+$sql = "SELECT orders.OrderID, orders.CustomerID, orders.OrderDate, orderline.OrderQuantity, orderline.OrderID FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID WHERE orders.CustomerID = '". $CustomerID ."' AND orders.OrderDate = '".$todaysDate."'";
 if ($result = mysqli_query($conn, $sql))
   {
   // Return the number of rows in result set
-  $rowcount=mysqli_num_rows($result);
+  $rowcount =mysqli_num_rows($result);
   echo $rowcount, " ";
   // Free result set
   mysqli_free_result($result);

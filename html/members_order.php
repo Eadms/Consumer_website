@@ -59,7 +59,9 @@ parse_str($_SERVER['QUERY_STRING'], $queries);	?>
 				<li>
                 <input type='text' id='CustomerID' name='CustomerID' value=<?php if (isset($_SESSION['Member'])) {echo $_SESSION['customerID'];} ?>>
             </li>
-				<input type='text' id='OrderID' name='OrderID' value=<?php if(isset($dbproduct['OrderDate'])) { echo $dbproduct['OrderID'];} else {echo "";} ?>>
+				<li>
+                <input type='text' id='orderID' name='orderID' value='<?php if(isset($dbproduct['OrderDate'])) { echo $dbproduct['OrderID'];} else {echo "";} ?>'>
+            </li>
             </ul>
         <button type='submit' onclick='submitOrder()'>Add to Cart</button>
         <button type="button" onclick='clearBoxes()'>Clear</button>
