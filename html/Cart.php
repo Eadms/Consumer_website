@@ -35,28 +35,33 @@ $resultCheck = mysqli_num_rows($result);
 $row = mysqli_fetch_assoc($result);		
 		
 if($CustomerID == isset($row['CustomerID']) && $todaysDate == isset($row['OrderDate']))  {		
-		
+//join statement which connects the orders, orderline and product tables into one		
 $join = "SELECT orders.OrderID, orders.CustomerID, orders.OrderDate, orderline.ProductID, orderline.OrderQuantity, product.ProductDescription, product.ProductPrice FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID INNER JOIN product ON orderline.ProductID = product.ProductID WHERE CustomerID = '". $CustomerID ."' AND OrderDate = '". $todaysDate ."'";
 
 $joinresult = mysqli_query($conn, $join);
 $joincheck = mysqli_num_rows($joinresult);
-
+//while loop which loops through all the available results from the tables which match the customerID and date
 	while ($joinloop = mysqli_fetch_assoc($joinresult))	{
 	echo "<p><b>Product ID: </b>", $joinloop['ProductID'], "<br>", "<b>Product Quantity: </b>", $joinloop['OrderQuantity'], "<br>", "<b>Product Description: </b>", $joinloop['ProductDescription'], "<br>", "<b>Product Price: </b>$", $joinloop['ProductPrice'], "<br>", "<b>Total line price: </b>", "$", $calc = $joinloop['OrderQuantity'] * $joinloop['ProductPrice'] , "<br>", 
 	
-	"<form action='include_files/delete_function.php' method='post'><input type='text' name='productID' value= '". $joinloop['ProductID'] ."'></input><input type='text' name='quantity' value= '". $joinloop['OrderQuantity'] ."'></input><input type='text' name='price' value= '". $joinloop['ProductPrice'] ."'></input><input type='text' name='orderID' value= '". $joinloop['OrderID'] ."'></input><button type='submit'>Delete item</button></form>", "<hr></p>";
-		$items[] = $calc;
+	//creates a hidden form which contains the loop information needed to make the delete function work
+	"<form action='include_files/delete_orderline.php' method='post'><input type='hidden' name='ProductID' value= '".$joinloop['ProductID']."'><input type='hidden' name='quantity' value= '". $joinloop['OrderQuantity'] ."'><input type='hidden' name='price' value= '". $joinloop['ProductPrice'] ."'><input type='hidden' name='orderID' value= '". $joinloop['OrderID'] ."'><button type='submit'>Delete item</button></form>", "<hr></p>";
+		$items[] = $calc; //turns the calculation of product price x quantity for all cart items into an array
+		$orderID = $joinloop['OrderID'];
 	}
 	echo "<p>Total cost: ", "$",array_sum($items) , "</p>";
+	
+	echo "<form action='include_files/delete_cart.php' method='post'>
+	<input type='hidden' name='customerID' value='".$CustomerID."'><input type='hidden' name='orderID' value='".$orderID."'><button type='submit'>Delete Cart</button></form>";
 	
 } else {
 	echo "<p>Your cart is empty</p>";
 }		
+			
 	?>
-<form>
+
 <button type="button" onclick="closeWindow()">Close Cart</button>
-<button type="button">Delete Cart</button>
+
 <button tye="button" onclick="openConfirmpage()">Confirm Order</button>
-	</form>
 </body>
 </html>
