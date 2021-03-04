@@ -1,12 +1,6 @@
 <?php 
-//require 'database.inc.php';
+require 'database.inc.php';
 $pdo = new PDO("mysql:host=localhost;dbname=bazaarceramics_db;charset=utf8","root","");
-
-$serverName = "localhost";
-	$dbusername = "root";
-	$dbpassword = "";
-	$dbname = "bazaarceramics_db";
-	$conn = mysqli_connect($serverName, $dbusername, $dbpassword, $dbname);
 
 if (isset($_POST['quantity'], $_POST['total-price'], $_POST['productID'], $_POST['date'], $_POST['CustomerID'], $_POST['orderID'])) {
 //creates variables based on the inputs into the input boxes
@@ -15,7 +9,6 @@ $price = $_POST['total-price'];
 $productID = $_POST['productID'];
 $date = $_POST['date'];
 $CustomerID = $_POST['CustomerID'];
-$orderID = $_POST['orderID'];
 	
 //mysqli_insert_id
 $productCheck = "SELECT * FROM product where ProductID = '".$productID."'";	

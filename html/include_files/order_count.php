@@ -8,10 +8,9 @@ $result = mysqli_query($conn, $sql);
   
   // Return the number of rows in result set
   $rowcount = mysqli_num_rows($result);
-  $_SESSION['cartAmount'] = $rowcount;
 	
-if(isset($_SESSION['cartAmount'])) {
-	echo $_SESSION['cartAmount'], " ";
+if(isset($_SESSION['orderSuccess'])) {
+	echo $rowcount = mysqli_num_rows($result), " ";
 } else {
 	echo "0", " "; 
 }

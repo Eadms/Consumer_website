@@ -17,9 +17,13 @@
 			include 'include_files/order_count.php';
 	if(!isset($_SESSION['Member'])) {
 	header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
-$queries = array();
+
+			$queries = array();
 parse_str($_SERVER['QUERY_STRING'], $queries);
-			$_SESSION['cartTrigger'] = $queries['order'];
+			
+			if (isset($queries['order'])){
+				$_SESSION['orderSuccess'] = $queries['order'];
+			}
 			
 			?>		
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
