@@ -8,5 +8,5 @@ $customerID = $_POST['customerID'];
 
 $delete = "DELETE FROM orders WHERE OrderID = '".$orderID."' AND CustomerID = '".$customerID."'";
 mysqli_query($conn, $delete);
-header('location: ../cart.php');
+header('location: ../members.php');
 }

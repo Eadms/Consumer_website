@@ -1,27 +1,26 @@
 //function to open the order page and specify the query string for each product
 function openWindow() {
   myWindow = window.open("members_order.php?product=Copper%Red%Dish&price=40&productID=bcpot020&slice=../images/slicedimages/bcpot002", "pot"); //query string for the red bowl
-  window.close("pot"); // code which closes any order window which is already open
+ 
 }
 function openWindow2() {
   myWindow = window.open("members_order.php?product=White%bowl&price=60&productID=bcpot120&slice=../images/slicedimages//bcpot001", "pot"); //query string for the white bowl
-  window.close("pot"); // code which closes any order window which is already open
+ 
 }
 function openWindow3() {
   myWindow = window.open("members_order.php?product=Copper%Red%Vase&price=50&productID=bcpot030&slice=../images/slicedimages//bcpot003", "pot"); //query string for the red vase
-  window.close("pot"); // code which closes any order window which is already open
+  
 }
 function openWindow4() {
   myWindow = window.open("members_order.php?product=Tungsten%Blue%bowl&price=35&productID=bcpot090&slice=../images/slicedimages//bcpot006", "pot"); //query string for the blue bowl
-  window.close("pot"); // code which closes any order window which is already open
+ 
 }
 function openWindow5() {
   myWindow = window.open("members_order.php?product=Blue%teacup&price=30&productID=bcpot080&slice=../images/slicedimages/bcpot008", "pot"); //query string for the blue teacup
-  window.close("pot"); // code which closes any order window which is already open
 }
 function openWindow6() {
   myWindow = window.open("members_order.php?product=Cyan%dish&price=40&productID=bcpot060&slice=../images/slicedimages/bcpot009", "pot"); //query string for the turquoise bowl
-  window.close("pot"); // code which closes any order window which is already open
+
 }
 
 function openCart() {

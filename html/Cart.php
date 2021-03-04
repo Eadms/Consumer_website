@@ -56,12 +56,9 @@ $joincheck = mysqli_num_rows($joinresult);
 	
 } else {
 	echo "<p>Your cart is empty</p>";
-}		
-			
+}			
 	?>
-
 <button type="button" onclick="closeWindow()">Close Cart</button>
-
 <button tye="button" onclick="openConfirmpage()">Confirm Order</button>
 </body>
 </html>

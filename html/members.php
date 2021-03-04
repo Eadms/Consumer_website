@@ -9,31 +9,19 @@
 	</head>
 	<body class="member-body">
 		<header class="content">
-			<?php include 'include_files/navigation.inc.php';
+		<?php include 'include_files/navigation.inc.php';
 			include 'include_files/banner.inc.php';
 			include 'include_files/member_login_functions.inc.php';
 			include 'include_files/welcome_message.inc.php';
 			require 'include_files/database.inc.php';
+			include 'include_files/order_count.php';
 	if(!isset($_SESSION['Member'])) {
 	header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
-
+$queries = array();
+parse_str($_SERVER['QUERY_STRING'], $queries);
+			$_SESSION['cartTrigger'] = $queries['order'];
+			
 			?>		
-			<p>amount ordered: <?php 
-				
-$CustomerID = $_SESSION['customerID'];		
-$todaysDate = date("Y-m-d");	
-				
-$sql = "SELECT orders.OrderID, orders.CustomerID, orders.OrderDate, orderline.OrderQuantity, orderline.OrderID FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID WHERE orders.CustomerID = '". $CustomerID ."' AND orders.OrderDate = '".$todaysDate."'";
-if ($result = mysqli_query($conn, $sql))
-  {
-  // Return the number of rows in result set
-  $rowcount =mysqli_num_rows($result);
-  echo $rowcount, " ";
-  // Free result set
-  mysqli_free_result($result);
-}
-				?><a href="cart.php" target="_blank" onclick="openCart()">Items in Cart</a>
-						
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
 		</header>

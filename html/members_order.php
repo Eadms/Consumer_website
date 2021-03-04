@@ -12,7 +12,7 @@
 			include 'include_files/welcome_message.inc.php';
 			include 'include_files/shopping_cart_functions.php';
 			require 'include_files/database.inc.php';
-	
+			require 'include_files/order_count.php';
 $todaysDate = date("Y-m-d");
 
 $productCheck = "SELECT * FROM orders where CustomerID = '".$_SESSION['customerID']."' AND OrderDate = '".$todaysDate."'";	
@@ -54,13 +54,13 @@ parse_str($_SERVER['QUERY_STRING'], $queries);	?>
                 <input type='text' id='productID' name='productID' value=<?php echo $queries['productID'] ?>>
             </li>
 			<li>
-                <input type='text' id='date' name='date' value=<?php echo date("Y-m-d")?>>
+                <input type='hidden' id='date' name='date' value=<?php echo date("Y-m-d")?>>
             </li>
 				<li>
-                <input type='text' id='CustomerID' name='CustomerID' value=<?php if (isset($_SESSION['Member'])) {echo $_SESSION['customerID'];} ?>>
+                <input type='hidden' id='CustomerID' name='CustomerID' value=<?php if (isset($_SESSION['Member'])) {echo $_SESSION['customerID'];} ?>>
             </li>
 				<li>
-                <input type='text' id='orderID' name='orderID' value='<?php if(isset($dbproduct['OrderDate'])) { echo $dbproduct['OrderID'];} else {echo "";} ?>'>
+                <input type='hidden' id='orderID' name='orderID' value='<?php if(isset($dbproduct['OrderDate'])) { echo $dbproduct['OrderID'];} else {echo "";} ?>'>
             </li>
             </ul>
         <button type='submit' onclick='submitOrder()'>Add to Cart</button>

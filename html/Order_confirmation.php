@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Order Complete</title>
 	<link rel="stylesheet"  type='text/css' href="../styles/customer_registration.css">
+	<script src="../scripts/Form.js"></script>
 </head>
 <body>
 	<?php 
@@ -20,7 +21,6 @@ header("location: Member_login.php?login=notloggedin");} //redirects user if the
 	
 $CustomerID = $_SESSION['customerID'];		
 $todaysDate = date("Y-m-d");
-	
 	
 $checkDatabase = "SELECT * FROM orders WHERE CustomerID = '". $CustomerID ."' AND OrderDate = '".$todaysDate."'";
 $result = mysqli_query($conn, $checkDatabase);
@@ -53,6 +53,8 @@ if($CustomerID == isset($row['CustomerID']) && $todaysDate == isset($row['OrderD
 	echo "<p>Your cart is empty</p>";
 }
 	?>
-	<button type="button">Payment</button>
+	<form action="include_files/payment.php" method="post">
+	<button type="submit">Payment</button>
+	</form>
 </body>
 </html>
