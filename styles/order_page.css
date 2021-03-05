@@ -149,9 +149,15 @@ footer {
     }
 
 p {
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+	margin-left: 5%;
+	margin-right: 5%;
     }
+
+.form-header {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
 
 .order-header {
       text-align: center; 

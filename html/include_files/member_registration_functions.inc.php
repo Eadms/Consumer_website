@@ -32,14 +32,14 @@ $user = $result->fetch(); //fetches the database information
 		header("location: ../member_registration.php?signup=Passworddontmatch"); //redirects page with query string which displays error message
 		exit();
 	} elseif($email !== $user['CustomerEmail']) { //checks if the email entered matches an email in the database
-		header("location: ../Customer_registration.php?signup=norecord");
+		header("location: ../customer_registration.php?signup=norecord");
 		exit();
 	} else {
 		//adds the customer information into the member's table and adds the same CustomerID number that is in the customer table
 	$register = "INSERT into members(CustomerID, UserID, HashedPassword, first_name, last_name, email)
 VALUES ('". $user['CustomerID'] ."','". $_POST['Username'] ."','". password_hash($_POST['pwd'],PASSWORD_DEFAULT) ."','".$_POST['firstName'] ."','".$_POST['lastName'] ."','". $_POST['email'] ."')";
 		mysqli_query($conn, $register);
-		header('location: ../Member_login.php?login=success'); //redirects the user to the login page if registration is successful 
+		header('location: ../member_login.php?login=success'); //redirects the user to the login page if registration is successful 
 		session_unset(); //unsets the variables set when creating an account
 	} 	
 }

@@ -18,7 +18,7 @@ $sql = "SELECT * FROM members WHERE UserID = '".$username."'"; //selects  user r
 		$_SESSION['customerID'] = $row['CustomerID'];
 		exit();
 	} else {
-		header("location:../Member_login.php?login=error"); //if the username/pwd doesn't match a record, an error will display based on the query string
+		header("location:../member_login.php?login=error"); //if the username/pwd doesn't match a record, an error will display based on the query string
 	}
 }
 ?>

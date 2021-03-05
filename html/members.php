@@ -19,6 +19,7 @@
 if(!isset($_SESSION['Member'])) {
 header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
 
+date_default_timezone_set('Australia/Sydney'); //sets the correct timezone for the date			
 $CustomerID = $_SESSION['customerID'];	//sets the variable for the SQL statement	
 $todaysDate = date("Y-m-d"); //sets the variable for the SQL statement	 
 
@@ -42,7 +43,7 @@ $rowcount = mysqli_num_rows($result);
 if(isset($_SESSION['orderSuccess'])) {
 	echo "<p>amount ordered: ", $rowcount = mysqli_num_rows($result), " ", "<a href='cart.php' target='_blank' onclick='openCart()'>Items in Cart</a></p>";
 } else {
-	echo  "<p>amount ordered:, 0", " ", "<a href='cart.php' target='_blank' onclick='openCart()'>Items in Cart</a></p>"; 
+	echo  "<p>amount ordered: 0", " ", "<a href='cart.php' target='_blank' onclick='openCart()'>Items in Cart</a></p>"; 
 }
   // Free result set
 //  mysqli_free_result($result);

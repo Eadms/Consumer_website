@@ -1,5 +1,7 @@
 <p>amount ordered: 
 <?php
+date_default_timezone_set('Australia/Sydney');
+	
 $CustomerID = $_SESSION['customerID'];		
 $todaysDate = date("Y-m-d");	
 				
