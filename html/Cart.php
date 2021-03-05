@@ -23,7 +23,8 @@
 	<?php
 if(!isset($_SESSION['Member'])) {
 header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
-	
+
+//sets the variables for the SQL statement		
 $CustomerID = $_SESSION['customerID'];		
 $todaysDate = date("Y-m-d");
 		
@@ -48,12 +49,11 @@ $joincheck = mysqli_num_rows($joinresult);
 	"<form action='include_files/delete_orderline.php' method='post'><input type='hidden' name='ProductID' value= '".$joinloop['ProductID']."'><input type='hidden' name='quantity' value= '". $joinloop['OrderQuantity'] ."'><input type='hidden' name='price' value= '". $joinloop['ProductPrice'] ."'><input type='hidden' name='orderID' value= '". $joinloop['OrderID'] ."'><button type='submit'>Delete item</button></form>", "<hr></p>";
 		$items[] = $calc; //turns the calculation of product price x quantity for all cart items into an array
 		$orderID = $joinloop['OrderID'];
-	}
-	echo "<p>Total cost: ", "$",array_sum($items) , "</p>";
-	
+	}	
+	if (isset($orderID)) {
 	echo "<form action='include_files/delete_cart.php' method='post'>
 	<input type='hidden' name='customerID' value='".$CustomerID."'><input type='hidden' name='orderID' value='".$orderID."'><button type='submit'>Delete Cart</button></form>";
-	
+	}
 } else {
 	echo "<p>Your cart is empty</p>";
 }			

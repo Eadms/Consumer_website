@@ -14,18 +14,39 @@
 			include 'include_files/member_login_functions.inc.php';
 			include 'include_files/welcome_message.inc.php';
 			require 'include_files/database.inc.php';
-			include 'include_files/order_count.php';
-	if(!isset($_SESSION['Member'])) {
-	header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
+			include 'include_files/shopping_cart_functions.php';
+	
+if(!isset($_SESSION['Member'])) {
+header("location: Member_login.php?login=notloggedin");} //redirects user if they are not logged in
 
-			$queries = array();
+$CustomerID = $_SESSION['customerID'];	//sets the variable for the SQL statement	
+$todaysDate = date("Y-m-d"); //sets the variable for the SQL statement	 
+
+//selects the order data where the customer ID matches the user and the order date is today's date			
+$sql = "SELECT orders.OrderID, orders.CustomerID, orders.OrderDate, orderline.OrderQuantity, orderline.OrderID FROM orders INNER JOIN orderline ON orders.OrderID = orderline.OrderID WHERE orders.CustomerID = '". $CustomerID ."' AND orders.OrderDate = '".$todaysDate."'";
+$result = mysqli_query($conn, $sql);
+
+//creates an array of the query string values
+$queries = array();
 parse_str($_SERVER['QUERY_STRING'], $queries);
+
+//if 'success' is in the query string then the amount ordered will be displayed. This is done to reset the count after it resets to 0 when the payment button is clicked			
+if (isset($queries['order'])){
+	$_SESSION['orderSuccess'] = $queries['order'];
+	}		
 			
-			if (isset($queries['order'])){
-				$_SESSION['orderSuccess'] = $queries['order'];
-			}
-			
-			?>		
+// Return the number of rows in result set
+$rowcount = mysqli_num_rows($result);
+
+//if the query string contains 'success', echo the cart amount or else echo 0. This function is to enable the reset to 0 after clicking payment			
+if(isset($_SESSION['orderSuccess'])) {
+	echo "<p>amount ordered: ", $rowcount = mysqli_num_rows($result), " ", "<a href='cart.php' target='_blank' onclick='openCart()'>Items in Cart</a></p>";
+} else {
+	echo  "<p>amount ordered:, 0", " ", "<a href='cart.php' target='_blank' onclick='openCart()'>Items in Cart</a></p>"; 
+}
+  // Free result set
+//  mysqli_free_result($result);
+?>
 			<h1 class="member-header">Bazaar Ceramics - Members </h1><!--Page main header-->
 			<h2 class="member-h2">Members Prices</h2><!--page subheader-->
 		</header>
@@ -66,13 +87,13 @@ parse_str($_SERVER['QUERY_STRING'], $queries);
 		} else {
 			$errorCheck = $_GET['Error'];
 			
-			if($errorCheck == "ProductID") {
+			if($errorCheck == "ProductID") { //displays error if the Product ID doesn't exist
 				echo "<script language='Javascript'>alert('The product ID does not exist. Please select one of the available products.');</script>";
 				exit();
-			} elseif($errorCheck == "zero") {
+			} elseif($errorCheck == "zero") { //displays error if the quantity is less than 1
 				echo "<script language='Javascript'>alert('Please select a product quantity of at least one.');</script>";
 				exit();
-			} elseif($errorCheck == "numerals") {
+			} elseif($errorCheck == "numerals") { //displays error if anything other than numbers are input
 				echo "<script language='Javascript'>alert('You can only input numberals into the quantity box.');</script>";
 				exit();
 		}
