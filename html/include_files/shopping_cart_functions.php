@@ -31,12 +31,12 @@ if($productID != $dbproduct['ProductID']) {
 	header("location: ../members.php?Error=numerals"); //redirects and shows an error message
 } elseif (!empty($orderID)) { //if there is no orderID already, insert into the orders and orderline tables
 mysqli_query($conn, "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $orderID."', '". $productID."', '". $quantity."' )");	
-	header('location: ../Members.php?order=success'); 
+	header('location: ../members.php?order=success'); 
 } else { //if there is already an OrderID, just insert into the orderline table
 mysqli_query($conn, "INSERT into orders(CustomerID, OrderDate) VALUES ('". $CustomerID ."', '". $date ."')");
 $orderstableID = mysqli_insert_id($conn); //retrives the OrderID that was created
 mysqli_query($conn, "INSERT into orderline(OrderID, ProductID, OrderQuantity)  VALUES ('". $orderstableID."', '". $productID."', '". $quantity."' )");
-header('location: ../Members.php?order=success'); //redirects the user back to the member page
+header('location: ../members.php?order=success'); //redirects the user back to the member page
 exit();
 }
 }

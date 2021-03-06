@@ -54,7 +54,7 @@ $joincheck = mysqli_num_rows($joinresult);
 		$orderID = $joinloop['OrderID']; //retrives the orderID from the array and turns into a variable
 	}
 	
-	echo "<p>Total order amount: ", isset($items[), "</p>";
+	echo "<p>Total order amount: $", array_sum($items), "</p>"; //sums the array items in the variable and prints to the page
 	
 	if (isset($orderID)) { //if there is an orderID, print the delete cart button and create a hidden form which submits the OrderID and customerID to the delete cart include file
 	echo "<form action='include_files/delete_cart.php' method='post'>

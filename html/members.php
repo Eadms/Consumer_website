@@ -64,9 +64,9 @@ if(isset($_SESSION['orderSuccess'])) {
 					<img src="../images/smaller/bcpot003_smaller.jpg" alt="a tall vase with a red glaze"  style="left: 0px; top: 0px"  class='page-link' onclick="openWindow3()"></td>
 				</tr>
 				<tr>
-					<td>Copper Red Dish - $40</td>
-					<td>White bowl - $60</td>
-					<td>Copper Red Vase - $50</td>
+					<td>Copper Red Dish - $450</td>
+					<td>White bowl - $999</td>
+					<td>Copper Red Vase - $870</td>
 				</tr>
 				<tr>
 					<td style="width: 202px">
@@ -77,9 +77,9 @@ if(isset($_SESSION['orderSuccess'])) {
 					<img src="../images/smaller/bcpot009_smaller.jpg" alt="a small turquoise bowl with an elevated base" height="156" style="left: 0px; top: 0px" width="242" class='page-link' onclick="openWindow6()"></td>
 				</tr>
 				<tr>
-					<td>Tungsten Blue Dish - $35</td>
-					<td>Light Blue Cup Set - $30</td>
-					<td>Cyan Dish - $40</td>
+					<td>Tungsten Blue Dish - $399</td>
+					<td>Light Blue Cup Set - $106</td>
+					<td>Cyan Dish - $950</td>
 				</tr>
 			</table>
 	<?php 

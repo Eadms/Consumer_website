@@ -25,7 +25,7 @@ $user = $result->fetch(); //fetches the database information
 		} elseif(preg_match("/^[\/\\.\\%\\@\\?\n]*$/", $Username)) { //checks that the username doesn't contain certain characters
 			header("location: ../member_registration.php?signup=charusername"); //redirects page with query string which displays error
 			exit();
-		} elseif(!preg_match("/^[a-zA-Z\\1-9\\.\\/\n]*$/", $pwd) || !preg_match("/^[a-zA-Z]*$/", $pwdrepeat)) { //checks that the password doesn't contain certain characters
+		} elseif(!preg_match("/^[a-zA-Z\\0-9\\.\\/\n]*$/", $pwd) || !preg_match("/^[a-zA-Z\\0-9\\.\\/\n]*$/", $pwdrepeat)) { //checks that the password doesn't contain certain characters
 			header("location: ../member_registration.php?signup=charpwd"); //redirects page with query string which displays error
 			exit();
 		} elseif($pwd !== $pwdrepeat) { //checks that the password has been typed correctly into both input boxes

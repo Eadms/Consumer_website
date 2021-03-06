@@ -54,7 +54,7 @@ if($CustomerID == isset($row['CustomerID']) && $todaysDate == isset($row['OrderD
 		$ordernumber = $customerjoinloop['OrderID'];
 	}
 	//prints the retrieved customer information below the while loop items
-	echo " <p>Total order details", "<br>","<b>Order Number: </b>" ,$ordernumber,"<br>", "<b>Order Date: </b>",$todaysDate, "<br>", "<b>Total cost: </b>", "$",array_sum($items), "<br>", "<b>Customer Name: </b>", $customerfirstname, " ", $customerlastname, "<br>", "<b>Delivery Address: </b>", $address, ", ",$suburb, ", ", $state, " ", $postcode, ", ", $country, "</p>";
+	echo " <p>Total order details<br>", "<br>","<b>Order Number: </b>" ,$ordernumber,"<br>", "<b>Order Date: </b>",$todaysDate, "<br>", "<b>Total cost: </b>", "$",array_sum($items), "<br>", "<b>Customer Name: </b>", $customerfirstname, " ", $customerlastname, "<br>", "<b>Delivery Address: </b>", $address, ", ",$suburb, ", ", $state, " ", $postcode, ", ", $country, "</p>";
 } else {
 	echo "<p>Your cart is empty</p>"; //displays a message that the cart is empty if the user goes to this page without ordering anything
 }
