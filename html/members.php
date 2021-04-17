@@ -5,7 +5,7 @@
 		<meta name="keywords" content="ceramics, pottery, clay, bazaar ceramics, gallery"> <!--page keywords for search engines--> 
 		<title>Bazaar Ceramics - Members</title> <!--page title that is displayed in the browser tab-->
 		<link rel="stylesheet"  type='text/css' href="../styles/members_pages.css">
-	<script src="../scripts/Form.js"></script>
+		<script src="../scripts/Form.js"></script>
 	</head>
 	<body class="member-body">
 		<header class="content">
@@ -100,5 +100,6 @@ if(isset($_SESSION['orderSuccess'])) {
 		}
 		}
 		?>
+		
 	</body>
 </html>

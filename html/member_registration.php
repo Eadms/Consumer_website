@@ -18,17 +18,17 @@
 	<p class="form-text">Register your details below to be added to our Member Database. <br><br> Please note that you will first need to be registered on our Customer Databased in order to register on our Member Database</p>
 	<div class="form-container">
         <form action="include_files/member_registration_functions.inc.php" method="post" class="sign-up-form">
-			<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" required>
+			<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" size="11" required>
 			<br>
-			<label for "lastName">Last name</label><input type="text" name= "lastName" placeholder=" Last name" required>
+			<label for "lastName">Last name</label><input type="text" name= "lastName" placeholder=" Last name" size="11" required>
 			<br>
-			<label for "email">Email</label><input type="text" name= "email" placeholder="Email" required>
+			<label for "email">Email</label><input type="text" name= "email" placeholder="Email" size="11" required>
 			<br>
-			<label for "Username">Username</label><input type="text" name= "Username" placeholder="Username" required>
+			<label for "Username">Username</label><input type="text" name= "Username" placeholder="Username" size="11" required>
 			<br>
-			<label for "pwd">Password</label><input type="password" name= "pwd" placeholder="Password" minlength="6" required>
+			<label for "pwd">Password</label><input type="password" name= "pwd" placeholder="Password" minlength="6" size="11" required>
 			<br>
-			<label for "pwdrepeat">Repeat Password</label><input type= "password" name="pwdRepeat" placeholder="Repeat Password" required>
+			<label for "pwdrepeat">Repeat Password</label><input type= "password" name="pwdRepeat" placeholder="Repeat Password" size="11" required>
 			<br>
 			</div>
 		<div class="login-container">

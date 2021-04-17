@@ -28,7 +28,7 @@ function openCart() {
 }
 
 function openConfirmpage() {
-	myWindow = window.open("Order_confirmation.php");
+	myWindow = window.open("order_confirmation.php");
 }
 
 //function to close the order and cart pages

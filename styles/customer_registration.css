@@ -104,15 +104,21 @@
 	justify-content: center;
 	flex-wrap: nowrap;
 	align-items: center;
+  align-content: center;
 }
 
 .sign-up-form {
 	width: 40%;
+  display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+	align-items: center;
+  align-content: center;
 }
 
 
 .login-form {
-	width: 40%;
+	width: 200px;
 }
 
 .registration-button {
@@ -123,13 +129,14 @@
 label {
 	font-family: arial, helvetica, sans-serif;
 	display: inline-block;
-	width: 200px;
+	width: 150px;
 	text-align: right;
 	margin-right: 1%;
 	margin-bottom: 1%;
 }
 
 input {
+  margin-top: 1px;
 	flex-basis: 150px;
 }
 

@@ -21,23 +21,23 @@
 	<p class='instructions'>Register your details below to be added to our customer database</p>
 	<div class="form-container"> <!-- form for customers to register details -->
         <form action="include_files/customer_Sign_up_functions.inc.php" method="post" class="sign-up-form">		
-			<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" required>
+			<label for "firstName">First name</label><input type="text" name= "firstName" placeholder="First name" size="11" required>
 			<br>
-			<label for "lastName">Last name</label><input type="text" name= "lastName" placeholder=" Last name" required>
+			<label for "lastName">Last name</label><input type="text" name= "lastName" placeholder=" Last name" size="11" required>
 			<br>
-			<label for "email">Email</label><input type="text" name= "email" placeholder="Email" required>
+			<label for "email">Email</label><input type="text" name= "email" placeholder="Email"  size="11" required>
 			<br>
-			<label for "address">Street Address</label><input type="text" name= "address" placeholder="Street Address" required>
+			<label for "address">Street Address</label><input type="text" name= "address" placeholder="Street Address" size="11" required>
 			<br>
-			<label for "suburb">Suburb</label><input type="text" name= "suburb" placeholder="Suburb" required>
+			<label for "suburb">Suburb</label><input type="text" name= "suburb" placeholder="Suburb" size="11" required>
 			<br>
-			<label for "state">State</label><input type= "text" name="state" placeholder="State" required>
+			<label for "state">State</label><input type= "text" name="state" placeholder="State" size="11" required>
 			<br>
-			<label for "postcode">Postcode</label><input type="text" name= "postcode" placeholder="Postcode" required>
+			<label for "postcode">Postcode</label><input type="text" name= "postcode" placeholder="Postcode" size="11" required>
 			<br>
-			<label for "country">Country</label><input type="text" name= "country" placeholder="Country" required>
+			<label for "country">Country</label><input type="text" name= "country" placeholder="Country" size="11" required>
 			<br>
-			<label for "phone">Phone number</label><input type= "text" name="phone" placeholder="Phone Number" required>
+			<label for "phone">Phone number</label><input type= "text" name="phone" placeholder="Phone Number" size="11" required>
 			<br>
 			</div>
 		<div class="login-container">

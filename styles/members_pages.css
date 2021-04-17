@@ -194,11 +194,10 @@ table {
 }
 
 table, tr, td, th {
-  border: 1px solid black;
+  border: none;
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
-  background-color:#CC6600;
   position: relative;
   font-family:arial, helvetica, sans-serif;
   }
